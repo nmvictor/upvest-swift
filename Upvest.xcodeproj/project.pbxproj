@@ -53,8 +53,8 @@
 		2FC8302C230AB3E300ECA72F = {
 			isa = PBXGroup;
 			children = (
-				2FC83038230AB3E300ECA72F /* Upvest */,
-				2FC83043230AB3E300ECA72F /* UpvestTests */,
+				2FC83038230AB3E300ECA72F /* Sources */,
+				2FC83043230AB3E300ECA72F /* Tests */,
 				2FC83037230AB3E300ECA72F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +68,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FC83038230AB3E300ECA72F /* Upvest */ = {
+		2FC83038230AB3E300ECA72F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				2FC83039230AB3E300ECA72F /* Upvest.h */,
 				2FC8303A230AB3E300ECA72F /* Info.plist */,
 			);
-			path = Upvest;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		2FC83043230AB3E300ECA72F /* UpvestTests */ = {
+		2FC83043230AB3E300ECA72F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2FC83044230AB3E300ECA72F /* UpvestTests.swift */,
 				2FC83046230AB3E300ECA72F /* Info.plist */,
 			);
-			path = UpvestTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +148,7 @@
 				TargetAttributes = {
 					2FC83035230AB3E300ECA72F = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					2FC8303E230AB3E300ECA72F = {
 						CreatedOnToolsVersion = 10.3;
@@ -341,14 +342,16 @@
 		2FC8304B230AB3E300ECA72F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Upvest/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.upvest.Upvest;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,14 +369,16 @@
 		2FC8304C230AB3E300ECA72F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Upvest/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,7 +396,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UpvestTests/Info.plist;
+				DEVELOPMENT_TEAM = 6AB423W2Q2;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -407,7 +414,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = UpvestTests/Info.plist;
+				DEVELOPMENT_TEAM = 6AB423W2Q2;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
