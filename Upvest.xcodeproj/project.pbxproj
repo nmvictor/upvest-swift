@@ -10,6 +10,54 @@
 		2FC83040230AB3E300ECA72F /* Upvest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC83036230AB3E300ECA72F /* Upvest.framework */; };
 		2FC83045230AB3E300ECA72F /* UpvestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC83044230AB3E300ECA72F /* UpvestTests.swift */; };
 		2FC83047230AB3E300ECA72F /* Upvest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC83039230AB3E300ECA72F /* Upvest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FE1C0AC230BD4D00026BE74 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0A7230BD4CF0026BE74 /* HTTPMethod.swift */; };
+		2FE1C0AD230BD4D00026BE74 /* HTTPResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0A8230BD4CF0026BE74 /* HTTPResource.swift */; };
+		2FE1C0AE230BD4D00026BE74 /* HTTPResourceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0A9230BD4CF0026BE74 /* HTTPResourceClient.swift */; };
+		2FE1C0AF230BD4D00026BE74 /* HTTPBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0AA230BD4CF0026BE74 /* HTTPBehavior.swift */; };
+		2FE1C0B0230BD4D00026BE74 /* ResourceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0AB230BD4CF0026BE74 /* ResourceError.swift */; };
+		2FE1C0BB230BD50D0026BE74 /* BaseQueueOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0B8230BD50D0026BE74 /* BaseQueueOperation.swift */; };
+		2FE1C0BC230BD50D0026BE74 /* GetUserRepositoresOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0B9230BD50D0026BE74 /* GetUserRepositoresOperation.swift */; };
+		2FE1C0BD230BD50D0026BE74 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0BA230BD50D0026BE74 /* BaseOperation.swift */; };
+		2FE1C0BF230BD55C0026BE74 /* Upvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0BE230BD55C0026BE74 /* Upvest.swift */; };
+		2FE1C0C6230BD5D60026BE74 /* UpvestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0C1230BD5D60026BE74 /* UpvestError.swift */; };
+		2FE1C0C7230BD5D60026BE74 /* APIDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0C2230BD5D60026BE74 /* APIDefinition.swift */; };
+		2FE1C0C8230BD5D60026BE74 /* UpvestURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0C3230BD5D60026BE74 /* UpvestURLProtocol.swift */; };
+		2FE1C0C9230BD5D60026BE74 /* AuthTokenBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0C4230BD5D60026BE74 /* AuthTokenBehavior.swift */; };
+		2FE1C0CD230BD61A0026BE74 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0CC230BD61A0026BE74 /* Repository.swift */; };
+		2FE1C0D0230BD6A70026BE74 /* Foundation+Upvest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0CF230BD6A70026BE74 /* Foundation+Upvest.swift */; };
+		2FE1C0D8230BDAE70026BE74 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE1C0D3230BD7BD0026BE74 /* Nimble.framework */; };
+		2FE1C0D9230BDAE70026BE74 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE1C0D2230BD7BD0026BE74 /* Quick.framework */; };
+		2FE1C0EC230BDC1C0026BE74 /* StubUpvestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */; };
+		2FE1C0ED230BDC390026BE74 /* RepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0DB230BDBA70026BE74 /* RepositorySpec.swift */; };
+		2FE1C0F0230BDC580026BE74 /* StubHTTPResourceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */; };
+		2FE1C0F1230BDC620026BE74 /* APIDefinitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */; };
+		2FE1C0F2230BDCE00026BE74 /* Repository.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE1C0E7230BDBB30026BE74 /* Repository.json */; };
+		2FE1C0F5230BE0230026BE74 /* UpvestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0F4230BE0230026BE74 /* UpvestAPI.swift */; };
+		2FE1C116230C505A0026BE74 /* LocalStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C10F230C50580026BE74 /* LocalStorageType.swift */; };
+		2FE1C117230C505A0026BE74 /* LocalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C110230C50580026BE74 /* LocalObject.swift */; };
+		2FE1C118230C505A0026BE74 /* LocalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C111230C50590026BE74 /* LocalValue.swift */; };
+		2FE1C119230C505A0026BE74 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C112230C50590026BE74 /* AuthManager.swift */; };
+		2FE1C11A230C505A0026BE74 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C113230C50590026BE74 /* UserDefaultsStorage.swift */; };
+		2FE1C11C230C505A0026BE74 /* LocalStorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C115230C505A0026BE74 /* LocalStorageKeys.swift */; };
+		2FE1C11F230C50E70026BE74 /* UpvestOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C11E230C50E70026BE74 /* UpvestOAuth.swift */; };
+		2FE1C127230D2EA40026BE74 /* HTTPResourceClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C121230D2EA40026BE74 /* HTTPResourceClientSpec.swift */; };
+		2FE1C128230D2EA40026BE74 /* BaseOperationSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C122230D2EA40026BE74 /* BaseOperationSpec.swift */; };
+		2FE1C129230D2EA40026BE74 /* UpvestOAuthSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C123230D2EA40026BE74 /* UpvestOAuthSpec.swift */; };
+		2FE1C12B230D2EA40026BE74 /* AuthManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C125230D2EA40026BE74 /* AuthManagerSpec.swift */; };
+		2FE1C12F230D2F970026BE74 /* UpvestAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C12E230D2F970026BE74 /* UpvestAPISpec.swift */; };
+		2FE1C130230D2FD00026BE74 /* UpvestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0F6230BE1250026BE74 /* UpvestSpec.swift */; };
+		2FE1C137230D33720026BE74 /* StubStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C134230D33720026BE74 /* StubStorage.swift */; };
+		2FE1C138230D33720026BE74 /* StubURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C135230D33720026BE74 /* StubURLSession.swift */; };
+		2FE1C13A230D42130026BE74 /* UserDefaultsStorageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C139230D42130026BE74 /* UserDefaultsStorageSpec.swift */; };
+		2FE1C13D230D5BFB0026BE74 /* ClienteleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C13B230D5BF80026BE74 /* ClienteleAPI.swift */; };
+		2FE1C147230E80730026BE74 /* Foundation+UpvestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C145230E803F0026BE74 /* Foundation+UpvestTests.swift */; };
+		2FE1C14A230E85780026BE74 /* AuthOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C149230E85780026BE74 /* AuthOperation.swift */; };
+		2FE1C14C230E87520026BE74 /* StubUpvestWithMockStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C14B230E87520026BE74 /* StubUpvestWithMockStorage.swift */; };
+		2FE1C14E230E8A220026BE74 /* Echo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C14D230E8A220026BE74 /* Echo.swift */; };
+		2FE1C150230E8C770026BE74 /* ClienteleEchoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C14F230E8C770026BE74 /* ClienteleEchoOperation.swift */; };
+		2FE1C153230E988F0026BE74 /* ClienteleAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C151230E98830026BE74 /* ClienteleAPISpec.swift */; };
+		2FE1C156230EA0EF0026BE74 /* EchoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C154230EA0230026BE74 /* EchoSpec.swift */; };
+		2FE1C15B230EA3C20026BE74 /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C15A230EA3C20026BE74 /* Hmac.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +77,55 @@
 		2FC8303F230AB3E300ECA72F /* UpvestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UpvestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC83044230AB3E300ECA72F /* UpvestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpvestTests.swift; sourceTree = "<group>"; };
 		2FC83046230AB3E300ECA72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FE1C0A7230BD4CF0026BE74 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2FE1C0A8230BD4CF0026BE74 /* HTTPResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResource.swift; sourceTree = "<group>"; };
+		2FE1C0A9230BD4CF0026BE74 /* HTTPResourceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResourceClient.swift; sourceTree = "<group>"; };
+		2FE1C0AA230BD4CF0026BE74 /* HTTPBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPBehavior.swift; sourceTree = "<group>"; };
+		2FE1C0AB230BD4CF0026BE74 /* ResourceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceError.swift; sourceTree = "<group>"; };
+		2FE1C0B8230BD50D0026BE74 /* BaseQueueOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseQueueOperation.swift; sourceTree = "<group>"; };
+		2FE1C0B9230BD50D0026BE74 /* GetUserRepositoresOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserRepositoresOperation.swift; sourceTree = "<group>"; };
+		2FE1C0BA230BD50D0026BE74 /* BaseOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
+		2FE1C0BE230BD55C0026BE74 /* Upvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upvest.swift; sourceTree = "<group>"; };
+		2FE1C0C1230BD5D60026BE74 /* UpvestError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestError.swift; sourceTree = "<group>"; };
+		2FE1C0C2230BD5D60026BE74 /* APIDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDefinition.swift; sourceTree = "<group>"; };
+		2FE1C0C3230BD5D60026BE74 /* UpvestURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestURLProtocol.swift; sourceTree = "<group>"; };
+		2FE1C0C4230BD5D60026BE74 /* AuthTokenBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthTokenBehavior.swift; sourceTree = "<group>"; };
+		2FE1C0CC230BD61A0026BE74 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		2FE1C0CF230BD6A70026BE74 /* Foundation+Upvest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Upvest.swift"; sourceTree = "<group>"; };
+		2FE1C0D2230BD7BD0026BE74 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		2FE1C0D3230BD7BD0026BE74 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		2FE1C0DB230BDBA70026BE74 /* RepositorySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySpec.swift; sourceTree = "<group>"; };
+		2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDefinitionSpec.swift; sourceTree = "<group>"; };
+		2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubUpvestAPI.swift; sourceTree = "<group>"; };
+		2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHTTPResourceClient.swift; sourceTree = "<group>"; };
+		2FE1C0E7230BDBB30026BE74 /* Repository.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Repository.json; sourceTree = "<group>"; };
+		2FE1C0F4230BE0230026BE74 /* UpvestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestAPI.swift; sourceTree = "<group>"; };
+		2FE1C0F6230BE1250026BE74 /* UpvestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestSpec.swift; sourceTree = "<group>"; };
+		2FE1C10F230C50580026BE74 /* LocalStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageType.swift; sourceTree = "<group>"; };
+		2FE1C110230C50580026BE74 /* LocalObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalObject.swift; sourceTree = "<group>"; };
+		2FE1C111230C50590026BE74 /* LocalValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalValue.swift; sourceTree = "<group>"; };
+		2FE1C112230C50590026BE74 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		2FE1C113230C50590026BE74 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		2FE1C115230C505A0026BE74 /* LocalStorageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageKeys.swift; sourceTree = "<group>"; };
+		2FE1C11E230C50E70026BE74 /* UpvestOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestOAuth.swift; sourceTree = "<group>"; };
+		2FE1C121230D2EA40026BE74 /* HTTPResourceClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResourceClientSpec.swift; sourceTree = "<group>"; };
+		2FE1C122230D2EA40026BE74 /* BaseOperationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOperationSpec.swift; sourceTree = "<group>"; };
+		2FE1C123230D2EA40026BE74 /* UpvestOAuthSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestOAuthSpec.swift; sourceTree = "<group>"; };
+		2FE1C125230D2EA40026BE74 /* AuthManagerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManagerSpec.swift; sourceTree = "<group>"; };
+		2FE1C12E230D2F970026BE74 /* UpvestAPISpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestAPISpec.swift; sourceTree = "<group>"; };
+		2FE1C134230D33720026BE74 /* StubStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubStorage.swift; sourceTree = "<group>"; };
+		2FE1C135230D33720026BE74 /* StubURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubURLSession.swift; sourceTree = "<group>"; };
+		2FE1C139230D42130026BE74 /* UserDefaultsStorageSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorageSpec.swift; sourceTree = "<group>"; };
+		2FE1C13B230D5BF80026BE74 /* ClienteleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteleAPI.swift; sourceTree = "<group>"; };
+		2FE1C145230E803F0026BE74 /* Foundation+UpvestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+UpvestTests.swift"; sourceTree = "<group>"; };
+		2FE1C149230E85780026BE74 /* AuthOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthOperation.swift; sourceTree = "<group>"; };
+		2FE1C14B230E87520026BE74 /* StubUpvestWithMockStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubUpvestWithMockStorage.swift; sourceTree = "<group>"; };
+		2FE1C14D230E8A220026BE74 /* Echo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Echo.swift; sourceTree = "<group>"; };
+		2FE1C14F230E8C770026BE74 /* ClienteleEchoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteleEchoOperation.swift; sourceTree = "<group>"; };
+		2FE1C151230E98830026BE74 /* ClienteleAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteleAPISpec.swift; sourceTree = "<group>"; };
+		2FE1C154230EA0230026BE74 /* EchoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoSpec.swift; sourceTree = "<group>"; };
+		2FE1C15A230EA3C20026BE74 /* Hmac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hmac.swift; sourceTree = "<group>"; };
+		2FE1C160230EA5850026BE74 /* libcryptex.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcryptex.tbd; path = usr/lib/libcryptex.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE1C0D8230BDAE70026BE74 /* Nimble.framework in Frameworks */,
+				2FE1C0D9230BDAE70026BE74 /* Quick.framework in Frameworks */,
 				2FC83040230AB3E300ECA72F /* Upvest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +155,7 @@
 				2FC83038230AB3E300ECA72F /* Sources */,
 				2FC83043230AB3E300ECA72F /* Tests */,
 				2FC83037230AB3E300ECA72F /* Products */,
+				2FE1C0D1230BD7BD0026BE74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +171,15 @@
 		2FC83038230AB3E300ECA72F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2FE1C0BE230BD55C0026BE74 /* Upvest.swift */,
 				2FC83039230AB3E300ECA72F /* Upvest.h */,
 				2FC8303A230AB3E300ECA72F /* Info.plist */,
+				2FE1C143230E74620026BE74 /* Auth */,
+				2FE1C11D230C507D0026BE74 /* Storage */,
+				2FE1C0CB230BD5F00026BE74 /* Models */,
+				2FE1C0C0230BD5AF0026BE74 /* Api */,
+				2FE1C0A6230BD46F0026BE74 /* Http */,
+				2FE1C0CE230BD6690026BE74 /* Extensions */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -80,10 +187,171 @@
 		2FC83043230AB3E300ECA72F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2FC83044230AB3E300ECA72F /* UpvestTests.swift */,
 				2FC83046230AB3E300ECA72F /* Info.plist */,
+				2FE1C0F6230BE1250026BE74 /* UpvestSpec.swift */,
+				2FC83044230AB3E300ECA72F /* UpvestTests.swift */,
+				2FE1C122230D2EA40026BE74 /* BaseOperationSpec.swift */,
+				2FE1C148230E84640026BE74 /* Auth */,
+				2FE1C144230E80190026BE74 /* Extensions */,
+				2FE1C12C230D2EB80026BE74 /* Models */,
+				2FE1C132230D30500026BE74 /* Http */,
+				2FE1C131230D301F0026BE74 /* Storage */,
+				2FE1C12D230D2EFF0026BE74 /* API */,
+				2FE1C0DA230BDB720026BE74 /* Stubs */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		2FE1C0A6230BD46F0026BE74 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C0B1230BD4DC0026BE74 /* Operations */,
+				2FE1C0AA230BD4CF0026BE74 /* HTTPBehavior.swift */,
+				2FE1C0A7230BD4CF0026BE74 /* HTTPMethod.swift */,
+				2FE1C0A8230BD4CF0026BE74 /* HTTPResource.swift */,
+				2FE1C0A9230BD4CF0026BE74 /* HTTPResourceClient.swift */,
+				2FE1C0AB230BD4CF0026BE74 /* ResourceError.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		2FE1C0B1230BD4DC0026BE74 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C149230E85780026BE74 /* AuthOperation.swift */,
+				2FE1C0BA230BD50D0026BE74 /* BaseOperation.swift */,
+				2FE1C0B8230BD50D0026BE74 /* BaseQueueOperation.swift */,
+				2FE1C0B9230BD50D0026BE74 /* GetUserRepositoresOperation.swift */,
+				2FE1C14F230E8C770026BE74 /* ClienteleEchoOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		2FE1C0C0230BD5AF0026BE74 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C0F4230BE0230026BE74 /* UpvestAPI.swift */,
+				2FE1C0C2230BD5D60026BE74 /* APIDefinition.swift */,
+				2FE1C0C4230BD5D60026BE74 /* AuthTokenBehavior.swift */,
+				2FE1C0C1230BD5D60026BE74 /* UpvestError.swift */,
+				2FE1C0C3230BD5D60026BE74 /* UpvestURLProtocol.swift */,
+				2FE1C13B230D5BF80026BE74 /* ClienteleAPI.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		2FE1C0CB230BD5F00026BE74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C11E230C50E70026BE74 /* UpvestOAuth.swift */,
+				2FE1C0CC230BD61A0026BE74 /* Repository.swift */,
+				2FE1C14D230E8A220026BE74 /* Echo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2FE1C0CE230BD6690026BE74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C0CF230BD6A70026BE74 /* Foundation+Upvest.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2FE1C0D1230BD7BD0026BE74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C160230EA5850026BE74 /* libcryptex.tbd */,
+				2FE1C0D3230BD7BD0026BE74 /* Nimble.framework */,
+				2FE1C0D2230BD7BD0026BE74 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FE1C0DA230BDB720026BE74 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C14B230E87520026BE74 /* StubUpvestWithMockStorage.swift */,
+				2FE1C134230D33720026BE74 /* StubStorage.swift */,
+				2FE1C135230D33720026BE74 /* StubURLSession.swift */,
+				2FE1C0E7230BDBB30026BE74 /* Repository.json */,
+				2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */,
+				2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		2FE1C11D230C507D0026BE74 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C110230C50580026BE74 /* LocalObject.swift */,
+				2FE1C115230C505A0026BE74 /* LocalStorageKeys.swift */,
+				2FE1C10F230C50580026BE74 /* LocalStorageType.swift */,
+				2FE1C111230C50590026BE74 /* LocalValue.swift */,
+				2FE1C113230C50590026BE74 /* UserDefaultsStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		2FE1C12C230D2EB80026BE74 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C123230D2EA40026BE74 /* UpvestOAuthSpec.swift */,
+				2FE1C0DB230BDBA70026BE74 /* RepositorySpec.swift */,
+				2FE1C154230EA0230026BE74 /* EchoSpec.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2FE1C12D230D2EFF0026BE74 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C12E230D2F970026BE74 /* UpvestAPISpec.swift */,
+				2FE1C151230E98830026BE74 /* ClienteleAPISpec.swift */,
+				2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2FE1C131230D301F0026BE74 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C139230D42130026BE74 /* UserDefaultsStorageSpec.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		2FE1C132230D30500026BE74 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C121230D2EA40026BE74 /* HTTPResourceClientSpec.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		2FE1C143230E74620026BE74 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C112230C50590026BE74 /* AuthManager.swift */,
+				2FE1C15A230EA3C20026BE74 /* Hmac.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		2FE1C144230E80190026BE74 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C145230E803F0026BE74 /* Foundation+UpvestTests.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2FE1C148230E84640026BE74 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C125230D2EA40026BE74 /* AuthManagerSpec.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +393,7 @@
 				2FC8303B230AB3E300ECA72F /* Sources */,
 				2FC8303C230AB3E300ECA72F /* Frameworks */,
 				2FC8303D230AB3E300ECA72F /* Resources */,
+				2FE1C0F3230BDE400026BE74 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -185,16 +454,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE1C0F2230BDCE00026BE74 /* Repository.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FE1C0F3230BDE400026BE74 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FC83032230AB3E300ECA72F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE1C0BF230BD55C0026BE74 /* Upvest.swift in Sources */,
+				2FE1C0B0230BD4D00026BE74 /* ResourceError.swift in Sources */,
+				2FE1C15B230EA3C20026BE74 /* Hmac.swift in Sources */,
+				2FE1C119230C505A0026BE74 /* AuthManager.swift in Sources */,
+				2FE1C0CD230BD61A0026BE74 /* Repository.swift in Sources */,
+				2FE1C117230C505A0026BE74 /* LocalObject.swift in Sources */,
+				2FE1C0BC230BD50D0026BE74 /* GetUserRepositoresOperation.swift in Sources */,
+				2FE1C14E230E8A220026BE74 /* Echo.swift in Sources */,
+				2FE1C0BD230BD50D0026BE74 /* BaseOperation.swift in Sources */,
+				2FE1C0AC230BD4D00026BE74 /* HTTPMethod.swift in Sources */,
+				2FE1C0D0230BD6A70026BE74 /* Foundation+Upvest.swift in Sources */,
+				2FE1C0BB230BD50D0026BE74 /* BaseQueueOperation.swift in Sources */,
+				2FE1C11A230C505A0026BE74 /* UserDefaultsStorage.swift in Sources */,
+				2FE1C14A230E85780026BE74 /* AuthOperation.swift in Sources */,
+				2FE1C0C8230BD5D60026BE74 /* UpvestURLProtocol.swift in Sources */,
+				2FE1C11C230C505A0026BE74 /* LocalStorageKeys.swift in Sources */,
+				2FE1C0F5230BE0230026BE74 /* UpvestAPI.swift in Sources */,
+				2FE1C116230C505A0026BE74 /* LocalStorageType.swift in Sources */,
+				2FE1C0AF230BD4D00026BE74 /* HTTPBehavior.swift in Sources */,
+				2FE1C13D230D5BFB0026BE74 /* ClienteleAPI.swift in Sources */,
+				2FE1C0C7230BD5D60026BE74 /* APIDefinition.swift in Sources */,
+				2FE1C150230E8C770026BE74 /* ClienteleEchoOperation.swift in Sources */,
+				2FE1C0AD230BD4D00026BE74 /* HTTPResource.swift in Sources */,
+				2FE1C0AE230BD4D00026BE74 /* HTTPResourceClient.swift in Sources */,
+				2FE1C0C6230BD5D60026BE74 /* UpvestError.swift in Sources */,
+				2FE1C0C9230BD5D60026BE74 /* AuthTokenBehavior.swift in Sources */,
+				2FE1C11F230C50E70026BE74 /* UpvestOAuth.swift in Sources */,
+				2FE1C118230C505A0026BE74 /* LocalValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +523,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE1C0F1230BDC620026BE74 /* APIDefinitionSpec.swift in Sources */,
+				2FE1C127230D2EA40026BE74 /* HTTPResourceClientSpec.swift in Sources */,
+				2FE1C0F0230BDC580026BE74 /* StubHTTPResourceClient.swift in Sources */,
+				2FE1C147230E80730026BE74 /* Foundation+UpvestTests.swift in Sources */,
 				2FC83045230AB3E300ECA72F /* UpvestTests.swift in Sources */,
+				2FE1C153230E988F0026BE74 /* ClienteleAPISpec.swift in Sources */,
+				2FE1C12F230D2F970026BE74 /* UpvestAPISpec.swift in Sources */,
+				2FE1C156230EA0EF0026BE74 /* EchoSpec.swift in Sources */,
+				2FE1C0ED230BDC390026BE74 /* RepositorySpec.swift in Sources */,
+				2FE1C138230D33720026BE74 /* StubURLSession.swift in Sources */,
+				2FE1C129230D2EA40026BE74 /* UpvestOAuthSpec.swift in Sources */,
+				2FE1C128230D2EA40026BE74 /* BaseOperationSpec.swift in Sources */,
+				2FE1C130230D2FD00026BE74 /* UpvestSpec.swift in Sources */,
+				2FE1C14C230E87520026BE74 /* StubUpvestWithMockStorage.swift in Sources */,
+				2FE1C137230D33720026BE74 /* StubStorage.swift in Sources */,
+				2FE1C0EC230BDC1C0026BE74 /* StubUpvestAPI.swift in Sources */,
+				2FE1C12B230D2EA40026BE74 /* AuthManagerSpec.swift in Sources */,
+				2FE1C13A230D42130026BE74 /* UserDefaultsStorageSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +613,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -332,6 +671,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -349,6 +689,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -376,6 +720,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -395,8 +743,13 @@
 		2FC8304E230AB3E300ECA72F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6AB423W2Q2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,8 +766,13 @@
 		2FC8304F230AB3E300ECA72F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6AB423W2Q2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

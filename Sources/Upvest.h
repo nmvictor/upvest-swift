@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CommonCrypto/CommonHMAC.h>
 
 //! Project version number for Upvest.
 FOUNDATION_EXPORT double UpvestVersionNumber;

@@ -16,6 +16,8 @@ Swift library for the [Upvest API](https://doc.upvest.co/docs)
 Follow [intructions here](https://github.com/Carthage/Carthage#installing-carthage) to install carthage.
 - Run the following command to install Test dependencies
 ```carthage update --platform iOS```
+Then run
+`carthage update`
 ### Linting
 ### Testing
 -
