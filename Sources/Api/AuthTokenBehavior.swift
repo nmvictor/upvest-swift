@@ -19,7 +19,7 @@ struct AuthTokenBehavior: HTTPBehavior {
   ///   - request: the request to modify
   func modifyRequest(request: inout URLRequest) {
     if let token = self.token {
-        request.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
     }
   }
 }
