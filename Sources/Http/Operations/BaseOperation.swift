@@ -33,7 +33,6 @@ internal class BaseOperation<A>: BaseQueueOperation {
         super.init()
     }
 
-    
     /// Validate that credentials aren't nil
     /// - returns:
     ///     - UpvestError: .noCredential if Upvest.shared.currentAuth is nil
@@ -68,7 +67,6 @@ internal class BaseOperation<A>: BaseQueueOperation {
             }
         }
     }
-
 
     /// Method called to execute a new http request. The request might be first added to a queue. This persisted queue
     /// will be reexecuted later on, if for instance a request is failing, even after several attempts.
