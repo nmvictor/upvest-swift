@@ -22,6 +22,7 @@ class ClienteleAPISpec: QuickSpec {
             api = StubUpvestAPI()
             let config = UpvestConfiguration.sample()
             upvest = StubUpvestWithMockStorage(configuration: config)
+            upvest.configuration = config
             upvest.api = api
         }
 

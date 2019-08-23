@@ -1,0 +1,12 @@
+{
+    "previous": "https://api.playground.upvest.co/1.0/tenancy/users/?cursor=abc",
+    "next": "https://api.playground.upvest.co/1.0/tenancy/users/?cursor=xyz",
+    "results": [
+         {
+            "username":"Jane Doe"
+        },
+        {
+            "username":"John Doe"
+        }
+    ]
+}

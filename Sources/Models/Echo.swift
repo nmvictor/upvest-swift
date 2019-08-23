@@ -16,3 +16,13 @@ public struct Echo {
 
 extension Echo: Codable {
 }
+
+
+/// A value object to represent Generic Result response from Upvest API.
+public struct BasicResult {
+    /// Result string
+    public let result: String!
+}
+
+extension BasicResult: Codable {
+}

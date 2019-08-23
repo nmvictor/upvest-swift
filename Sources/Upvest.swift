@@ -21,7 +21,11 @@ private var upvestInstance: Upvest!
     public static let SDK_VERSION = "1.0.0"
 
     /// Default configuration
-    public let configuration: UpvestConfiguration
+    public internal(set) var configuration: UpvestConfiguration {
+        didSet {
+            Upvest.apiSettings = self.configuration.apiSettings
+        }
+    }
 
     public internal(set) static var apiSettings: APISettings!
 
@@ -29,6 +33,7 @@ private var upvestInstance: Upvest!
     internal var api: UpvestAPIType {
         didSet {
             clienteleApi.api = api
+            tenancyApi.api = api
         }
     }
 
@@ -37,6 +42,9 @@ private var upvestInstance: Upvest!
 
     /// An object that handles clientele API
     private let clienteleApi: ClienteleAPI
+
+    /// An object that handles Tenancy API
+    private let tenancyApi: TenancyAPI
 
     /// An object that allows for persisting data locally
     internal var storage: LocalStorageType
@@ -83,6 +91,13 @@ private var upvestInstance: Upvest!
         return clienteleApi
     }
 
+    /// Get Clientele API
+    ///
+    /// - Returns: The Clientele API
+    func tenancy() -> TenancyAPI {
+        return tenancyApi
+    }
+
     ///
     /// Get the storage according the storage type choosen by the user.
     /// - returns:
@@ -105,7 +120,8 @@ private var upvestInstance: Upvest!
         self.storage = storageToUse
         self.authManager = AuthManager(storage: storageToUse)
         self.clienteleApi = ClienteleAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
-        Upvest.apiSettings = self.configuration.apiSettings
+        self.tenancyApi = TenancyAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
+
     }
 
     ///
@@ -121,16 +137,6 @@ private var upvestInstance: Upvest!
     }
 
     ///////////////////////////////////////////// OPERATIONS /////////////////////////////////////////////
-
-    /// Retrieve repositories for a User
-    ///
-    /// - Parameters:
-    ///   - username: The optional username, if not provided, we get repos for current user authenticated by token
-    ///   - callback: UpvestCompletion ([Repository], Error?)
-    public func getUserRepositories(username: String? = nil, _ callback: @escaping UpvestCompletion<[Repository]>) {
-        Upvest.submit(operation: GetUserRepositoresOperation(authManager: self.authManager, api: api,
-                                                    callback: callback))
-    }
 }
 
 extension Upvest {

@@ -61,14 +61,14 @@ class BaseOperationSpec: QuickSpec {
 
         describe("when there's an 'unauthorized'") {
             it("will make an auth request and before getting back to the original") {
-                let cannedResult = Result<[Repository], ResourceError>.failure(.unauthorized)
+                let cannedResult = Result<Echo, ResourceError>.failure(.unauthorized)
                 let authResult = Result<UpvestOAuth, ResourceError>.success(creds)
-                let regPushSuccessResult = Result<[Repository], ResourceError>.success([])
+                let regPushSuccessResult = Result<Echo, ResourceError>.success(Echo.sample())
                 api.add(result: cannedResult)
                 api.add(result: authResult)
                 api.add(result: regPushSuccessResult)
 
-                upvest.getUserRepositories({ (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
 
                 })
 
@@ -76,17 +76,17 @@ class BaseOperationSpec: QuickSpec {
             }
 
             it("will make an auth request and retry the original up the max number of times") {
-                let cannedResult = Result<[Repository], ResourceError>.failure(.unauthorized)
+                let cannedResult = Result<Echo, ResourceError>.failure(.unauthorized)
                 let authResult = Result<UpvestOAuth, ResourceError>.success(creds)
-                let regPushFailureResult = Result<[Repository], ResourceError>.failure(.unreachable)
-                let regPushSuccessResult = Result<[Repository], ResourceError>.success([])
+                let regPushFailureResult = Result<Echo, ResourceError>.failure(.unreachable)
+                let regPushSuccessResult = Result<Echo, ResourceError>.success(Echo.sample())
                 api.add(result: cannedResult)
                 api.add(result: authResult)
                 api.add(result: regPushFailureResult)
                 api.add(result: regPushFailureResult)
                 api.add(result: regPushSuccessResult)
 
-                upvest.getUserRepositories({ (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
 
                 })
 
@@ -94,12 +94,12 @@ class BaseOperationSpec: QuickSpec {
             }
 
             it("will give up after getting two another 'unauthorized'") {
-                let unauthorized = Result<[Repository], ResourceError>.failure(.unauthorized)
+                let unauthorized = Result<Echo, ResourceError>.failure(.unauthorized)
                 let authResult = Result<UpvestOAuth, ResourceError>.failure(.unauthorized)
                 api.add(result: unauthorized)
                 api.add(result: authResult)
 
-                upvest.getUserRepositories({ (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
 
                 })
 

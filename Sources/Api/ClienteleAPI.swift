@@ -34,7 +34,7 @@ public class ClienteleAPI {
 
     ///////////////////////////////////////////// OPERATIONS /////////////////////////////////////////////
 
-    func authenticate(username: String, password: String, callback: UpvestCompletion<UpvestOAuth>? = nil) {
+    public func authenticate(username: String, password: String, callback: UpvestCompletion<UpvestOAuth>? = nil) {
         Upvest.submit(operation: AuthOperation(authManager: authManager, api: api, clientId: self.clientId, clientSecret: self.clientSecret, scope: self.scope, username: username, password: password, callback: callback))
     }
 
@@ -43,8 +43,8 @@ public class ClienteleAPI {
     /// - Parameters:
     ///   - echo: The string to echo
     ///   - callback: UpvestCompletion<Echo> callback
-    func getEcho(echo: String, callback: @escaping UpvestCompletion<Echo>) {
-        Upvest.submit(operation: GetClienteleEchoOperation(authManager: self.authManager, api: api, clientId: self.clientId, echo: echo, callback: callback))
+    public func getEcho(echo: String, callback: @escaping UpvestCompletion<Echo>) {
+        Upvest.submit(operation: GetOAuth2EchoOperation(authManager: self.authManager, api: api, clientId: self.clientId, echo: echo, callback: callback))
     }
 
     /// Echo from Clientele API using `POST`
@@ -52,8 +52,8 @@ public class ClienteleAPI {
     /// - Parameters:
     ///   - echo: The string to echo
     ///   - callback: UpvestCompletion<Echo> callback
-    func postEcho(echo: String, callback: @escaping UpvestCompletion<Echo>) {
-        Upvest.submit(operation: PostClienteleEchoOperation(authManager: self.authManager, api: api, clientId: self.clientId, echo: echo, callback: callback))
+    public func postEcho(echo: String, callback: @escaping UpvestCompletion<Echo>) {
+        Upvest.submit(operation: PostOAuth2EchoOperation(authManager: self.authManager, api: api, clientId: self.clientId, echo: echo, callback: callback))
     }
 
 }

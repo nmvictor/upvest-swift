@@ -55,7 +55,7 @@ enum APIDefinition {
         )
     }
 
-    /// A resource to echo a string from Upvest.
+    /// A resource to echo a string from Upvest OAuth.
     ///
     /// - parameters:
     ///   - echo: The string to echo
@@ -70,7 +70,7 @@ enum APIDefinition {
         )
     }
 
-    /// A resource to echo a string from Upvest.
+    /// A resource to echo a string from Upvest OAuth.
     ///
     /// - parameters:
     ///   - echo: The string to echo
@@ -85,16 +85,133 @@ enum APIDefinition {
         )
     }
 
-    /// A resource for retrieving user repositories
+    /// A resource to echo a string from Upvest with Signed API Key.
     ///
-    /// - Parameter username: The optional username, if not provided, we get repos for current user authetnicated by token
+    /// - parameters:
+    ///   - echo: The string to echo
     /// - Returns: The HttpResource
-    static func getUserRepositories(username: String? = nil) -> HTTPResource<[Repository]> {
-        return jsonResources(
-            path: username != nil ? "/users/\(username!)/repos" : "/user/repos",
+    static func getEchoSigned(echo: String) -> HTTPResource<Echo> {
+        let payload = ["echo": echo] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.GET.rawValue, path: "/clientele/echo-signed", payload: payload)
+        return jsonResource(
+            path: "/clientele/echo-signed",
             method: .GET,
-            requestParameters: JSONDictionary(),
-            parse: fromJSONArray
+            requestParameters: ["echo": echo] as JSONDictionary,
+            headers: signedHeaders.merged(with: ["Content-Type": "application/x-www-form-urlencoded"]),
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource to echo a string from Upvest with Signed API Key.
+    ///
+    /// - parameters:
+    ///   - echo: The string to echo
+    /// - Returns: The HttpResource
+    static func postEchoSigned(echo: String) -> HTTPResource<Echo> {
+        let path = "/clientele/echo-signed"
+        let payload = ["echo": echo] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .POST,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for retrieving cursor result
+    ///
+    /// - Parameters:
+    ///   - url: The cursor url
+    ///   - params: Optional params
+    /// - Returns: The HttpResource
+    static func getCursorResult<T: Codable>(url: String, params: JSONDictionary = JSONDictionary()) -> HTTPResource<CursorResult<T>> {
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.GET.rawValue, path: url, payload: params)
+        return jsonResource(
+            path: url,
+            method: .GET,
+            requestParameters: params,
+            headers: signedHeaders.merged(with: ["Content-Type": "application/x-www-form-urlencoded"]),
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for creating a new user
+    ///
+    /// - Parameters:
+    ///   - username: The username for the user
+    /// - Returns: The HttpResource
+    static func createUser(username: String) -> HTTPResource<User> {
+        let path = "/users"
+        let payload = ["username": username] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .POST,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for deleting an existing user
+    ///
+    /// - Parameters:
+    ///   - username: The username for the user
+    /// - Returns: The HttpResource
+    static func deleteUser(username: String) -> HTTPResource<Void> {
+        let path = "/users/\(username)"
+        let payload = JSONDictionary()
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.DELETE.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .DELETE,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: noResult
+        )
+    }
+
+    /// A resource for updating password for an existing user
+    ///
+    /// - Parameters:
+    ///   - username: The username for the user
+    ///   - oldPassword: The old password
+    ///   - newPassword: The new password
+    /// - Returns: The HttpResource
+    static func updateUserPassword(username: String, oldPassword: String, newPassword: String) -> HTTPResource<User> {
+        let path = "/users/\(username)"
+        let payload = ["old_password": oldPassword, "new_password": newPassword] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.PATCH.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .PATCH,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for resetting password for an existing user
+    ///
+    /// - Parameters:
+    ///   - username: The username for the user
+    ///   - userId: The user id
+    ///   - seed: The seed configuration, from the decrypted recovery kit.
+    ///   - seedHash: The hash of the seed.
+    ///   - newPassword: The new password for the user
+    /// - Returns: The HttpResource
+    static func resetUserPassword(username: String, userId: String, seed: String, seedHash: String, newPassword: String) -> HTTPResource<BasicResult> {
+        let path = "/users/\(username)"
+        let payload = ["seed": seed, "seedhash": seedHash, "user_id": userId, "password": newPassword] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .PATCH,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
         )
     }
 
@@ -105,7 +222,7 @@ enum APIDefinition {
     ///   - method: Http Method
     ///   - payload: The payload
     /// - Returns: Signed Headers
-    func signedAuthHeaders(method: String, path: String, payload: JSONDictionary) -> [String: String] {
+    static func signedAuthHeaders(method: String, path: String, payload: JSONDictionary) -> [String: String] {
         let timestamp = Date.timeIntervalBetween1970AndReferenceDate
         let body = payload.asData?.toString() ?? "{}"
         let message = "\(timestamp)\(method)\(path)\(body)"

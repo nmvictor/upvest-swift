@@ -1,15 +1,15 @@
 //
-//  ClienteleEchoOperation.swift
+//  ApiKeySignedEchoOperation.swift
 //  Upvest
 //
-//  Created by Moin' Victor on 22/08/2019.
+//  Created by Moin' Victor on 23/08/2019.
 //  Copyright © 2019 Upvest. All rights reserved.
 //
 
 import Foundation
 
-/// Get Clientele Echo Operation
-internal class GetClienteleEchoOperation: BaseOperation<Echo> {
+/// Get API Key Signed Echo Operation
+internal class GetApiKeySignedEchoOperation: BaseOperation<Echo> {
     fileprivate let resource: () -> HTTPResource<Echo>
     fileprivate var callback: UpvestCompletion<Echo>
 
@@ -28,9 +28,14 @@ internal class GetClienteleEchoOperation: BaseOperation<Echo> {
                 callback: @escaping UpvestCompletion<Echo>) {
         self.callback = callback
         resource = {
-            APIDefinition.getEchoOAuth2(echo: echo)
+            APIDefinition.getEchoSigned(echo: echo)
         }
         super.init(authManager: authManager, api: api, clientId: clientId)
+    }
+
+    // we dont need auth for this operation
+    override func validateOAuth() -> UpvestError? {
+        return nil
     }
 
     /// Execute the operation
@@ -40,9 +45,8 @@ internal class GetClienteleEchoOperation: BaseOperation<Echo> {
     }
 }
 
-
-/// Post Clientele Echo Operation
-internal class PostClienteleEchoOperation: BaseOperation<Echo> {
+/// Post API Key Signed Echo Operation
+internal class PostApiKeySignedEchoOperation: BaseOperation<Echo> {
     fileprivate let resource: () -> HTTPResource<Echo>
     fileprivate var callback: UpvestCompletion<Echo>
 
@@ -61,9 +65,14 @@ internal class PostClienteleEchoOperation: BaseOperation<Echo> {
                 callback: @escaping UpvestCompletion<Echo>) {
         self.callback = callback
         resource = {
-            APIDefinition.postEchoOAuth2(echo: echo)
+            APIDefinition.postEchoSigned(echo: echo)
         }
         super.init(authManager: authManager, api: api, clientId: clientId)
+    }
+
+    // we dont need auth for this operation
+    override func validateOAuth() -> UpvestError? {
+        return nil
     }
 
     /// Execute the operation

@@ -14,24 +14,7 @@ import Quick
 
 class APIDefinitionSpec: QuickSpec {
     override func spec() {
-        describe("#getUserRepositories") {
-            context("with username") {
-                it("creates a resource") {
-                    let usrName = "test"
-                    let resource = APIDefinition.getUserRepositories(username: usrName)
-                    expect(resource.path).to(equal("/users/test/repos"))
-                    expect(resource.method.rawValue).to(equal("GET"))
-                }
-            }
-
-            context("without username") {
-                it("creates a resource") {
-                    let resource = APIDefinition.getUserRepositories()
-                    expect(resource.path).to(equal("/user/repos"))
-                    expect(resource.method.rawValue).to(equal("GET"))
-                }
-            }
-        }
+        Upvest.apiSettings = UpvestConfiguration.sample().apiSettings
 
         describe("#authenticate") {
             it("creates a resource") {
@@ -92,6 +75,127 @@ class APIDefinitionSpec: QuickSpec {
                     ] as JSONDictionary).to(equal(true))
                 expect(resource.headers.values.contains("application/x-www-form-urlencoded")).to(beTrue())
                 expect(resource.method.rawValue).to(equal("POST"))
+            }
+        }
+
+        describe("#getEchoSigned") {
+            it("creates a resource") {
+                let echo = "echo"
+                let resource = APIDefinition.getEchoSigned(echo: echo)
+                expect(resource.path).to(equal("/clientele/echo-signed"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "echo": echo
+                    ] as JSONDictionary).to(equal(true))
+                expect(resource.headers.values.contains("application/x-www-form-urlencoded")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+                expect(resource.method.rawValue).to(equal("GET"))
+            }
+        }
+
+        describe("#postEchoSigned") {
+            it("creates a resource") {
+                let echo = "echo"
+                let resource = APIDefinition.postEchoSigned(echo: echo)
+                expect(resource.path).to(equal("/clientele/echo-signed"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "echo": echo
+                    ] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+                expect(resource.method.rawValue).to(equal("POST"))
+            }
+        }
+
+        describe("#getCursorResult") {
+            it("creates a resource") {
+                let resource: HTTPResource<CursorResult<User>> = APIDefinition.getCursorResult(url: "/some/url")
+                expect(resource.path).to(equal("/some/url"))
+                expect(resource.method.rawValue).to(equal("GET"))
+                expect(resource.headers.values.contains("application/x-www-form-urlencoded")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#createUser") {
+            it("creates a resource") {
+                let username = "moin"
+                let resource: HTTPResource = APIDefinition.createUser(username: username)
+                expect(resource.path).to(equal("/users"))
+                expect(resource.method.rawValue).to(equal("POST"))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#deleteUser") {
+            it("creates a resource") {
+                let username = "moin"
+                let resource: HTTPResource = APIDefinition.deleteUser(username: username)
+                expect(resource.path).to(equal("/users/\(username)"))
+                expect(resource.method.rawValue).to(equal("DELETE"))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#updateUserPassword") {
+            it("creates a resource") {
+                let username = "moin"
+                let oldPass = "old"
+                let newPass = "new"
+                let resource: HTTPResource = APIDefinition.updateUserPassword(username: username, oldPassword: oldPass, newPassword: newPass)
+                expect(resource.path).to(equal("/users/\(username)"))
+                expect(resource.method.rawValue).to(equal("PATCH"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "old_password": oldPass,
+                    "new_password": newPass
+                    ] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#resetUserPassword") {
+            it("creates a resource") {
+                let username = "moin"
+                let userId = "UID"
+                let seed = "seed"
+                let seedHash = "hash"
+                let newPass = "new"
+                let resource: HTTPResource = APIDefinition.resetUserPassword(username: username, userId: userId, seed: seed, seedHash: seedHash, newPassword: newPass)
+                expect(resource.path).to(equal("/users/\(username)"))
+                expect(resource.method.rawValue).to(equal("PATCH"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "user_id": userId,
+                    "seed": seed,
+                    "seedhash": seedHash,
+                    "password": newPass
+                    ] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
             }
         }
     }
