@@ -1,0 +1,11 @@
+{
+    "id":"cfc59efb-3b21-5340-ae96-8cadb4ce31a8",
+    "name":"Example coin (Ropsten)",
+    "symbol":"COIN",
+    "exponent":12,
+    "protocol":"erc20_ropsten",
+    "metadata": {
+        "chain_id":3,
+        "contract":"0xb95185ca02B704e46721d878EE7f566C6a2a959f"
+    }
+}

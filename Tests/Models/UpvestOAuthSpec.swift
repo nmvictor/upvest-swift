@@ -40,7 +40,6 @@ extension UpvestOAuth {
             return nil
         }
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try? decoder.decode(UpvestOAuth.self, from: dictionary.asData! as Data)
     }
 

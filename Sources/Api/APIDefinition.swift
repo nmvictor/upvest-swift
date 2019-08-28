@@ -80,7 +80,6 @@ enum APIDefinition {
             path: "/clientele/echo-oauth2",
             method: .POST,
             requestParameters: ["echo": echo] as JSONDictionary,
-            headers: ["Content-Type": "application/x-www-form-urlencoded"],
             parse: fromJSONDictionary
         )
     }
@@ -96,7 +95,7 @@ enum APIDefinition {
         return jsonResource(
             path: "/clientele/echo-signed",
             method: .GET,
-            requestParameters: ["echo": echo] as JSONDictionary,
+            requestParameters: payload,
             headers: signedHeaders.merged(with: ["Content-Type": "application/x-www-form-urlencoded"]),
             parse: fromJSONDictionary
         )
@@ -211,6 +210,24 @@ enum APIDefinition {
             method: .PATCH,
             requestParameters: payload,
             headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource to retrieve Asset Information
+    ///
+    /// - parameters:
+    ///   - assetId: Unique asset ID.
+    /// - Returns: The HttpResource
+    static func getAssetInfomation(assetId: String) -> HTTPResource<Asset> {
+        let path = "/assets/\(assetId)"
+        let payload = JSONDictionary()
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.GET.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .GET,
+            requestParameters: payload,
+            headers: signedHeaders.merged(with: ["Content-Type": "application/x-www-form-urlencoded"]),
             parse: fromJSONDictionary
         )
     }
@@ -374,7 +391,6 @@ enum APIDefinition {
     private static func fromJSONArray<T: Codable>(jsonArray: JSONArray) -> [T] {
         var result: [T] = [T]()
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         for json in jsonArray {
             if let data =  json.asData, let objectT = try? decoder.decode(T.self, from: data) {
                 result.append(objectT)
@@ -390,7 +406,6 @@ enum APIDefinition {
     private static func fromJSONDictionary<T: Codable>(jsonDict: JSONDictionary) -> T? {
         var result: T?
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let data =  jsonDict.asData{
            result = try? decoder.decode(T.self, from: data)
         }

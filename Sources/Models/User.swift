@@ -10,8 +10,11 @@ import Foundation
 
 /// User
 public class User: Codable {
+    /// Username
     public internal(set) var username: String!
+    /// Recovery kit represented as SVG
     public internal(set) var recoverykit: String?
+    /// IDs of the wallets created for this new user.
     public internal(set) var walletIds: [String] = [String]()
 
     private enum CodingKeys: String, CodingKey {

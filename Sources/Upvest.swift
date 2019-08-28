@@ -34,6 +34,7 @@ private var upvestInstance: Upvest!
         didSet {
             clienteleApi.api = api
             tenancyApi.api = api
+            assetsApi.api = api
         }
     }
 
@@ -45,6 +46,9 @@ private var upvestInstance: Upvest!
 
     /// An object that handles Tenancy API
     private let tenancyApi: TenancyAPI
+
+    /// An object that handles Assets API
+    private let assetsApi: AssetsAPI
 
     /// An object that allows for persisting data locally
     internal var storage: LocalStorageType
@@ -93,9 +97,16 @@ private var upvestInstance: Upvest!
 
     /// Get Clientele API
     ///
-    /// - Returns: The Clientele API
+    /// - Returns: The Tenancy API
     func tenancy() -> TenancyAPI {
-        return tenancyApi
+            return tenancyApi
+    }
+
+    /// Get Assets API
+    ///
+    /// - Returns: The Assets API
+    func assets() -> AssetsAPI {
+        return assetsApi
     }
 
     ///
@@ -121,6 +132,7 @@ private var upvestInstance: Upvest!
         self.authManager = AuthManager(storage: storageToUse)
         self.clienteleApi = ClienteleAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
         self.tenancyApi = TenancyAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
+        self.assetsApi = AssetsAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
 
     }
 

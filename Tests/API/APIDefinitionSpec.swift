@@ -73,7 +73,6 @@ class APIDefinitionSpec: QuickSpec {
                 expect(resource.requestBody?.asDict() ?? [:] == [
                     "echo": echo
                     ] as JSONDictionary).to(equal(true))
-                expect(resource.headers.values.contains("application/x-www-form-urlencoded")).to(beTrue())
                 expect(resource.method.rawValue).to(equal("POST"))
             }
         }
@@ -191,6 +190,21 @@ class APIDefinitionSpec: QuickSpec {
                     "seedhash": seedHash,
                     "password": newPass
                     ] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#getAssetInfomation") {
+            it("creates a resource") {
+                let assetId = "UID"
+                let resource: HTTPResource = APIDefinition.getAssetInfomation(assetId: assetId)
+                expect(resource.path).to(equal("/assets/\(assetId)"))
+                expect(resource.method.rawValue).to(equal("GET"))
+                expect(resource.requestBody?.asDict() ?? [:] == [:] as JSONDictionary).to(equal(true))
                 expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
                 expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
                 expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())

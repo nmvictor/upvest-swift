@@ -308,7 +308,7 @@ class TenancyAPISpec: QuickSpec {
 
             describe("#getUsers") {
                 context("with success") {
-                    it("hits the API and returns a Users") {
+                    it("hits the API and returns Users") {
                         let cannedResult = CursorResult<User>.sample()!
                         api.add(result: Result<CursorResult<User>, ResourceError>.success(cannedResult))
 

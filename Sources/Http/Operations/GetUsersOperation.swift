@@ -22,12 +22,7 @@ internal class GetUsersOperation: GetCursorResultOperation<User> {
                 api: UpvestAPIType,
                 clientId: String,
                 callback: @escaping UpvestCompletion<CursorResult<User>>) {
-        super.init(authManager: authManager, api: api, clientId: clientId, url: "/users", callback: callback)
-    }
-
-    // we dont need auth for this operation
-    override func validateOAuth() -> UpvestError? {
-        return nil
+        super.init(authManager: authManager, api: api, clientId: clientId, url: "/users", allowOAuth: false, callback: callback)
     }
 
 }

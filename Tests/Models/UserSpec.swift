@@ -6,10 +6,10 @@
 //  Copyright © 2019 Moin' Victor. All rights reserved.
 //
 
-import Foundation
-@testable import Upvest
 import Nimble
 import Quick
+
+@testable import Upvest
 
 class UserSpec: QuickSpec {
     override func spec() {

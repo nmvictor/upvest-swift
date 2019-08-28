@@ -9,31 +9,16 @@
 import Foundation
 
 /// Clientele API
-public class ClienteleAPI {
-    internal let clientId: String
-    internal let clientSecret: String
-    internal let scope: String
-    internal var authManager: AuthManager
-    internal var api: UpvestAPIType
-
-    /// New Clientele API
-    ///
-    /// - Parameters:
-    ///   - authManager: Auth Manager
-    ///   - api: API object
-    ///   - clientId: Client ID
-    ///   - clientSecret: Client secret
-    ///   - scope: Scope
-    internal init(authManager: AuthManager, api: UpvestAPIType, clientId: String, clientSecret: String, scope: String) {
-        self.authManager = authManager
-        self.api = api
-        self.clientId = clientId
-        self.clientSecret = clientSecret
-        self.scope = scope
-    }
+public class ClienteleAPI: BaseAPI {
 
     ///////////////////////////////////////////// OPERATIONS /////////////////////////////////////////////
 
+    /// Authenticate User
+    ///
+    /// - Parameters:
+    ///   - username: Username
+    ///   - password: Password
+    ///   - callback: UpvestCompletion<UpvestOAuth> callback
     public func authenticate(username: String, password: String, callback: UpvestCompletion<UpvestOAuth>? = nil) {
         Upvest.submit(operation: AuthOperation(authManager: authManager, api: api, clientId: self.clientId, clientSecret: self.clientSecret, scope: self.scope, username: username, password: password, callback: callback))
     }

@@ -17,6 +17,7 @@ public class APICursor<T: Codable> {
     internal let scope: String
     internal var authManager: AuthManager
     internal var api: UpvestAPIType
+    internal var allowOAuth: Bool
 
     /// New API Cursor
     ///
@@ -26,13 +27,15 @@ public class APICursor<T: Codable> {
     ///   - clientId: Client ID
     ///   - clientSecret: Client secret
     ///   - scope: Scope
-    internal init(from result: CursorResult<T>, authManager: AuthManager, api: UpvestAPIType, clientId: String, clientSecret: String, scope: String) {
+     ///   - allowOAuth: If should allow OAuth validation
+    internal init(from result: CursorResult<T>, authManager: AuthManager, api: UpvestAPIType, clientId: String, clientSecret: String, scope: String, allowOAuth: Bool) {
         self.result = result
         self.authManager = authManager
         self.api = api
         self.clientId = clientId
         self.clientSecret = clientSecret
         self.scope = scope
+        self.allowOAuth = allowOAuth
     }
 
     /// Previous items in this cursor
@@ -43,7 +46,7 @@ public class APICursor<T: Codable> {
             callback(.success(result))
             return
         }
-        Upvest.submit(operation: GetCursorResultOperation(authManager: self.authManager, api: self.api, clientId: self.clientId, url: previous, callback: callback))
+        Upvest.submit(operation: GetCursorResultOperation(authManager: self.authManager, api: self.api, clientId: self.clientId, url: previous, allowOAuth: allowOAuth, callback: callback))
     }
 
     /// Next items in this cursor
@@ -54,6 +57,6 @@ public class APICursor<T: Codable> {
             callback(.success(result))
             return
         }
-        Upvest.submit(operation: GetCursorResultOperation(authManager: self.authManager, api: self.api, clientId: self.clientId, url: next, callback: callback))
+        Upvest.submit(operation: GetCursorResultOperation(authManager: self.authManager, api: self.api, clientId: self.clientId, url: next, allowOAuth: allowOAuth, callback: callback))
     }
 }

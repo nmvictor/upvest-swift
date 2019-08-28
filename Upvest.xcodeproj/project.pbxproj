@@ -57,6 +57,13 @@
 		2FE1C153230E988F0026BE74 /* ClienteleAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C151230E98830026BE74 /* ClienteleAPISpec.swift */; };
 		2FE1C156230EA0EF0026BE74 /* EchoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C154230EA0230026BE74 /* EchoSpec.swift */; };
 		2FE1C15B230EA3C20026BE74 /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C15A230EA3C20026BE74 /* Hmac.swift */; };
+		2FEC03F42316BD1800E2A83B /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F32316BD1800E2A83B /* Asset.swift */; };
+		2FEC03F62316E84200E2A83B /* AssetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F52316E84200E2A83B /* AssetSpec.swift */; };
+		2FEC03F82316E91700E2A83B /* Asset.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FEC03F72316E91700E2A83B /* Asset.json */; };
+		2FEC03FA2316EF2500E2A83B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F92316EF2500E2A83B /* BaseAPI.swift */; };
+		2FEC03FC2316F2ED00E2A83B /* AssetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */; };
+		2FEC03FE2316F49200E2A83B /* GetAssetDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */; };
+		2FEC04012316FBDA00E2A83B /* AssetsAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03FF2316FBD700E2A83B /* AssetsAPISpec.swift */; };
 		2FF5FBC0230FD39700EFDB92 /* CursorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBBF230FD39700EFDB92 /* CursorResult.swift */; };
 		2FF5FBC2230FDA2000EFDB92 /* TenancyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBC1230FDA2000EFDB92 /* TenancyAPI.swift */; };
 		2FF5FBC4230FDD1D00EFDB92 /* GetUsersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */; };
@@ -137,6 +144,13 @@
 		2FE1C154230EA0230026BE74 /* EchoSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EchoSpec.swift; sourceTree = "<group>"; };
 		2FE1C15A230EA3C20026BE74 /* Hmac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hmac.swift; sourceTree = "<group>"; };
 		2FE1C160230EA5850026BE74 /* libcryptex.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcryptex.tbd; path = usr/lib/libcryptex.tbd; sourceTree = SDKROOT; };
+		2FEC03F32316BD1800E2A83B /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		2FEC03F52316E84200E2A83B /* AssetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSpec.swift; sourceTree = "<group>"; };
+		2FEC03F72316E91700E2A83B /* Asset.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Asset.json; sourceTree = "<group>"; };
+		2FEC03F92316EF2500E2A83B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsAPI.swift; sourceTree = "<group>"; };
+		2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAssetDetailsOperation.swift; sourceTree = "<group>"; };
+		2FEC03FF2316FBD700E2A83B /* AssetsAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsAPISpec.swift; sourceTree = "<group>"; };
 		2FF5FBBF230FD39700EFDB92 /* CursorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorResult.swift; sourceTree = "<group>"; };
 		2FF5FBC1230FDA2000EFDB92 /* TenancyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenancyAPI.swift; sourceTree = "<group>"; };
 		2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersOperation.swift; sourceTree = "<group>"; };
@@ -253,6 +267,7 @@
 				2FF5FBDA231039D200EFDB92 /* DeleteUserOperation.swift */,
 				2FF5FBDC23103FD000EFDB92 /* UpdateUserPasswordOperation.swift */,
 				2FF5FBDE2310428B00EFDB92 /* ResetUserPasswordOperation.swift */,
+				2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -268,6 +283,8 @@
 				2FE1C13B230D5BF80026BE74 /* ClienteleAPI.swift */,
 				2FF5FBC1230FDA2000EFDB92 /* TenancyAPI.swift */,
 				2FF5FBD62310308B00EFDB92 /* APICursor.swift */,
+				2FEC03F92316EF2500E2A83B /* BaseAPI.swift */,
+				2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -279,6 +296,7 @@
 				2FE1C0CC230BD61A0026BE74 /* User.swift */,
 				2FE1C14D230E8A220026BE74 /* Echo.swift */,
 				2FF5FBBF230FD39700EFDB92 /* CursorResult.swift */,
+				2FEC03F32316BD1800E2A83B /* Asset.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -311,6 +329,7 @@
 				2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */,
 				2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */,
 				2FF5FBCC230FF15900EFDB92 /* UsersResult.json */,
+				2FEC03F72316E91700E2A83B /* Asset.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -334,6 +353,7 @@
 				2FE1C0DB230BDBA70026BE74 /* UserSpec.swift */,
 				2FE1C154230EA0230026BE74 /* EchoSpec.swift */,
 				2FF5FBCF230FF20B00EFDB92 /* CursorResultSpec.swift */,
+				2FEC03F52316E84200E2A83B /* AssetSpec.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +365,7 @@
 				2FE1C151230E98830026BE74 /* ClienteleAPISpec.swift */,
 				2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */,
 				2FF5FBC7230FE2F400EFDB92 /* TenancyAPISpec.swift */,
+				2FEC03FF2316FBD700E2A83B /* AssetsAPISpec.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -491,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE1C0F2230BDCE00026BE74 /* User.json in Resources */,
+				2FEC03F82316E91700E2A83B /* Asset.json in Resources */,
 				2FF5FBCE230FF15D00EFDB92 /* UsersResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,9 +562,11 @@
 				2FE1C0AC230BD4D00026BE74 /* HTTPMethod.swift in Sources */,
 				2FE1C0D0230BD6A70026BE74 /* Foundation+Upvest.swift in Sources */,
 				2FE1C0BB230BD50D0026BE74 /* BaseQueueOperation.swift in Sources */,
+				2FEC03FC2316F2ED00E2A83B /* AssetsAPI.swift in Sources */,
 				2FE1C11A230C505A0026BE74 /* UserDefaultsStorage.swift in Sources */,
 				2FE1C14A230E85780026BE74 /* AuthOperation.swift in Sources */,
 				2FE1C0C8230BD5D60026BE74 /* UpvestURLProtocol.swift in Sources */,
+				2FEC03FE2316F49200E2A83B /* GetAssetDetailsOperation.swift in Sources */,
 				2FF5FBDD23103FD000EFDB92 /* UpdateUserPasswordOperation.swift in Sources */,
 				2FF5FBDB231039D200EFDB92 /* DeleteUserOperation.swift in Sources */,
 				2FE1C11C230C505A0026BE74 /* LocalStorageKeys.swift in Sources */,
@@ -553,6 +577,8 @@
 				2FE1C0C7230BD5D60026BE74 /* APIDefinition.swift in Sources */,
 				2FE1C150230E8C770026BE74 /* OAuth2EchoOperation.swift in Sources */,
 				2FE1C0AD230BD4D00026BE74 /* HTTPResource.swift in Sources */,
+				2FEC03F42316BD1800E2A83B /* Asset.swift in Sources */,
+				2FEC03FA2316EF2500E2A83B /* BaseAPI.swift in Sources */,
 				2FF5FBDF2310428B00EFDB92 /* ResetUserPasswordOperation.swift in Sources */,
 				2FE1C0AE230BD4D00026BE74 /* HTTPResourceClient.swift in Sources */,
 				2FE1C0C6230BD5D60026BE74 /* UpvestError.swift in Sources */,
@@ -574,10 +600,12 @@
 				2FE1C0F0230BDC580026BE74 /* StubHTTPResourceClient.swift in Sources */,
 				2FE1C147230E80730026BE74 /* Foundation+UpvestTests.swift in Sources */,
 				2FC83045230AB3E300ECA72F /* UpvestTests.swift in Sources */,
+				2FEC03F62316E84200E2A83B /* AssetSpec.swift in Sources */,
 				2FE1C153230E988F0026BE74 /* ClienteleAPISpec.swift in Sources */,
 				2FF5FBCB230FE4EF00EFDB92 /* TenancyAPISpec.swift in Sources */,
 				2FE1C12F230D2F970026BE74 /* UpvestAPISpec.swift in Sources */,
 				2FE1C156230EA0EF0026BE74 /* EchoSpec.swift in Sources */,
+				2FEC04012316FBDA00E2A83B /* AssetsAPISpec.swift in Sources */,
 				2FE1C0ED230BDC390026BE74 /* UserSpec.swift in Sources */,
 				2FE1C138230D33720026BE74 /* StubURLSession.swift in Sources */,
 				2FE1C129230D2EA40026BE74 /* UpvestOAuthSpec.swift in Sources */,

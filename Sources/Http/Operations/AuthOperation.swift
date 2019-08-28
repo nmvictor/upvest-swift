@@ -7,6 +7,7 @@
 //
 import Foundation
 
+/// Auth Operation
 internal class AuthOperation: BaseOperation<UpvestOAuth> {
     fileprivate let resource: () -> HTTPResource<UpvestOAuth>
     fileprivate var callback: UpvestCompletion<UpvestOAuth>?

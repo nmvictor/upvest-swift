@@ -40,7 +40,6 @@ extension Echo {
             return nil
         }
         let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         return try? decoder.decode(Echo.self, from: dictionary.asData! as Data)
     }
 

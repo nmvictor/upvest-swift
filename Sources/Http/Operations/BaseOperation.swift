@@ -14,6 +14,8 @@ struct QueueConstant {
     static let MAX_SEC: UInt32 = 15
 }
 
+/// Base Operation, implements OAuth in `validateOAuth()`.
+// To disable OAuth, override `validateOAuth` to return `nil`
 internal class BaseOperation<A>: BaseQueueOperation {
     internal var authManager: AuthManager
     fileprivate let api: UpvestAPIType
