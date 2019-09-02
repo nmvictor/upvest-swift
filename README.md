@@ -25,7 +25,7 @@ Once you have your Swift package set up, adding `Upvest` as a dependency is as e
 
 ```
 dependencies: [
-.package(url: "https://github.com/upvestco/Upvest.git", from: "1.0.0")
+    .package(url: "https://github.com/upvestco/Upvest.git", from: "1.0.0")
 ]
 ```
 Then to your Target definition in `Package.swift   `
