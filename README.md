@@ -41,7 +41,13 @@ targets: [
 ### Configuring
 Prior to using Upvest SDK, you MUST configure it by adding the following to your Applications init, typically in `AppDelegate.swift`
 ```swift
- let config = UpvestConfiguration(apiUrl: "<REPLACE THIS>", clientId: "<REPLACE THIS>", clientSecret: "<REPLACE THIS>", scope: "read write echo wallet transaction", apiSettings: APISettings(apiKey: "<REPLACE THIS>", apiSecret: "<REPLACE THIS>", passphrase: "<REPLACE THIS>"))
+ let config = UpvestConfiguration(apiUrl: "<REPLACE THIS>", 
+                                  clientId: "<REPLACE THIS>", 
+                                  clientSecret: "<REPLACE THIS>", 
+                                  scope: "read write echo wallet transaction", 
+                                  apiSettings: APISettings(apiKey: "<REPLACE THIS>", 
+                                                           apiSecret: "<REPLACE THIS>", 
+                                                           passphrase: "<REPLACE THIS>"))
  Upvest.configure(configuration: config)
  
  ```
