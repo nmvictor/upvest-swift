@@ -122,7 +122,6 @@
 		2F0FF893231CFC2E007D2EE0 /* SignWithWalletOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignWithWalletOperation.swift; sourceTree = "<group>"; };
 		2F0FF895231D988E007D2EE0 /* SignedWithWalletResultSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedWithWalletResultSpec.swift; sourceTree = "<group>"; };
 		2F0FF899231D9F54007D2EE0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		2F0FF89A231DA559007D2EE0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		2F0FF89B231DAB47007D2EE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2F0FF8A1231DAE10007D2EE0 /* UsersResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersResult.json; sourceTree = "<group>"; };
 		2F0FF8A2231DAE10007D2EE0 /* SignedWithWalletResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignedWithWalletResult.json; sourceTree = "<group>"; };
@@ -275,7 +274,6 @@
 		2FC8302C230AB3E300ECA72F = {
 			isa = PBXGroup;
 			children = (
-				2F0FF89A231DA559007D2EE0 /* Package.swift */,
 				2F0FF899231D9F54007D2EE0 /* README.md */,
 				2FC83038230AB3E300ECA72F /* Sources */,
 				2FC83043230AB3E300ECA72F /* Tests */,
