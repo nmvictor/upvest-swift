@@ -176,7 +176,7 @@ With everything set up, simply run `bin/lint` to lint your code.
 You can configure linting options by editiing `.swiftlint.yml`file in the project source.
 ### Testing
 With everything set up, simply run `bin/test` to run tests.
-You can run tests from within XCode.
+You can also run Tests from within XCode.
 ### Versioning
 Prior to adding a new feature/bug fix, you can call this command `./bin/updateVersion` from project root, specifying the next version.
 This will help to make the version change to all relevant files.  
