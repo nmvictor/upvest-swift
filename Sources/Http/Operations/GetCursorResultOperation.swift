@@ -44,7 +44,7 @@ internal class GetCursorResultOperation<T: Codable>: BaseOperation<CursorResult<
         }
         return super.validateOAuth() // super checks OAuth
     }
-    
+
     /// Execute the operation
     override func start() {
         super.start()

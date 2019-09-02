@@ -6,6 +6,8 @@
 //  Copyright © 2019 Upvest. All rights reserved.
 //
 
+// swiftlint:disable type_body_length function_body_length cyclomatic_complexity
+
 import Foundation
 import Nimble
 import Quick

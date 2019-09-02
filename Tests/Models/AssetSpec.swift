@@ -6,6 +6,7 @@
 //  Copyright © 2019 Upvest. All rights reserved.
 //
 
+import Foundation
 import Nimble
 import Quick
 
@@ -16,7 +17,7 @@ class AssetSpec: QuickSpec {
         describe(".decodeJSON") {
             let decoder = JSONDecoder()
             context("from valid JSON string") {
-                it("returns a User object") {
+                it("returns a Asset object") {
                     let actual = self.stubbedAsset()
                     expect(actual?.id).to(equal("cfc59efb-3b21-5340-ae96-8cadb4ce31a8"))
                     expect(actual?.name).to(equal("Example coin (Ropsten)"))
@@ -30,7 +31,7 @@ class AssetSpec: QuickSpec {
 
             context("from invalid JSON string") {
                 it("returns nil") {
-                    let actual = try? decoder.decode(User.self, from: "{}".data(using: .utf8)!)
+                    let actual = try? decoder.decode(Asset.self, from: "{}".data(using: .utf8)!)
                     expect(actual).to(beNil())
                 }
             }

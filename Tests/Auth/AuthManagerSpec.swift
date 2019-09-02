@@ -11,7 +11,11 @@ class AuthManagerSpec: QuickSpec {
         it("stores the current credential") {
           let storage = StubStorage()
           let manager = AuthManager(storage: storage)
-          let auth = UpvestOAuth(accessToken: "zSMWkPGyMatY8oYVsFEv1Pr9sjMS3Q", tokenType: "Bearer", scope: "read write echo wallet transaction", expiresIn: 1300, refreshToken: "iYmTFUisTiNSwdwFaNQ63U1a6bOBNs")
+          let auth = UpvestOAuth(accessToken: "zSMWkPGyMatY8oYVsFEv1Pr9sjMS3Q",
+                                 tokenType: "Bearer",
+                                 scope: "read write echo wallet transaction",
+                                 expiresIn: 1300,
+                                 refreshToken: "iYmTFUisTiNSwdwFaNQ63U1a6bOBNs")
 
           manager.currentAuth = auth
 

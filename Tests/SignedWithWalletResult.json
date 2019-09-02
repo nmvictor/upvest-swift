@@ -1,0 +1,12 @@
+{
+    "big_number_format":"int64",
+    "algorithm":"ECDSA",
+    "curve": "c12",
+    "recover": "erc20_ropsten",
+    "r": "R",
+    "s": "S",
+    "public_key": {
+        "x": "3",
+        "y": "4"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "id":"3bf016a1-24d4-46e4-9800-9e3f223b9fab",
+    "balances": [
+        {
+            "amount":"10000000",
+            "asset_id":"deaaa6bf-d944-57fa-8ec4-2dd45d1f5d3f",
+            "name":"Ether (Ropsten)",
+            "symbol":"ETH",
+            "exponent":18
+        }
+    ],
+    "address":"0x0123456789ABCDEF",
+    "protocol":"co.upvest.kinds.Erc20",
+    "index":0,
+    "status":"ACTIVE"
+}

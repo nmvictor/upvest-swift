@@ -6,10 +6,11 @@
 //  Copyright © 2019 Upvest. All rights reserved.
 //
 
+// swiftlint:disable type_body_length function_body_length cyclomatic_complexity
+
 import Foundation
 import Nimble
 import Quick
-@testable import Upvest
 @testable import Upvest
 
 class AssetsAPISpec: QuickSpec {
@@ -39,7 +40,7 @@ class AssetsAPISpec: QuickSpec {
 
                     var assetResult: Asset?
                     var error: UpvestError?
-                    upvest.assets().getAssetInfo(byAssetId: "A-ID") { (result) in
+                    upvest.assets().getAsset(byId: "A-ID") { (result) in
                         switch result {
                         case .success(let result):
                             assetResult = result
@@ -137,7 +138,7 @@ class AssetsAPISpec: QuickSpec {
 
                         var assetResult: Asset?
                         var error: UpvestError?
-                        upvest.assets().getAssetInfo(byAssetId: "A-ID") { (result) in
+                        upvest.assets().getAsset(byId: "A-ID") { (result) in
                             switch result {
                             case .success(let result):
                                 assetResult = result
@@ -158,7 +159,7 @@ class AssetsAPISpec: QuickSpec {
 
                         var assetResult: Asset?
                         var error: UpvestError?
-                        upvest.assets().getAssetInfo(byAssetId: "A-ID") { (result) in
+                        upvest.assets().getAsset(byId: "A-ID") { (result) in
                             switch result {
                             case .success(let result):
                                 assetResult = result

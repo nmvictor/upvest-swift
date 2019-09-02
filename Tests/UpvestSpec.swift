@@ -35,7 +35,6 @@ class UpvestSpec: QuickSpec {
     } // spec
 } // class
 
-
 extension UpvestConfiguration {
 
     class func sample() -> UpvestConfiguration {

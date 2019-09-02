@@ -18,7 +18,7 @@ extension Dictionary {
         dictionary.forEach { copy.updateValue($1, forKey: $0) }
         return copy
     }
-    
+
 }
 
 public extension Data {
@@ -32,8 +32,6 @@ public extension Data {
     func toJSONDictionary() -> JSONDictionary? {
         // Treat an existing but blank data as an empty JSON object
         guard self.count > 0 else { return [:] }
-
-        // swiftlint:disable:next force_cast
         return try? JSONSerialization.jsonObject(with: self) as? JSONDictionary
     }
 

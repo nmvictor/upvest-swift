@@ -14,7 +14,7 @@ public class TenancyAPI: BaseAPI {
     override func allowOAuth() -> Bool {
         return false
     }
-    
+
     ///////////////////////////////////////////// OPERATIONS /////////////////////////////////////////////
 
     /// Create User
@@ -31,7 +31,7 @@ public class TenancyAPI: BaseAPI {
     /// - Parameters:
     ///   - username: The username
     ///   - callback: UpvestCompletion (Void, Error?)
-    public func deleteUser(username: String,_ callback: @escaping UpvestCompletion<Void>) {
+    public func deleteUser(username: String, _ callback: @escaping UpvestCompletion<Void>) {
         Upvest.submit(operation: DeleteUserOperation(authManager: self.authManager, api: api, clientId: self.clientId, username: username, callback: callback))
     }
 
@@ -58,10 +58,10 @@ public class TenancyAPI: BaseAPI {
     ///   - newPassword: The new password for the user
     ///   - callback: UpvestCompletion (BasicResult, Error?)
     public func resetUserPassword(username: String,
-                           userId: String,
-                           seed: String,
-                           seedHash: String,
-                           newPassword: String, _ callback: @escaping UpvestCompletion<BasicResult>) {
+                                  userId: String,
+                                  seed: String,
+                                  seedHash: String,
+                                  newPassword: String, _ callback: @escaping UpvestCompletion<BasicResult>) {
         Upvest.submit(operation: ResetUserPasswordOperation(authManager: self.authManager, api: api, clientId: self.clientId, username: username, userId: userId, seed: seed, seedHash: seedHash, newPassword: newPassword, callback: callback))
     }
 
@@ -72,6 +72,14 @@ public class TenancyAPI: BaseAPI {
     public func getUsers(_ callback: @escaping UpvestCompletion<CursorResult<User>>) {
         Upvest.submit(operation: GetUsersOperation(authManager: self.authManager, api: api, clientId: self.clientId,
                                                    callback: callback))
+    }
+
+    /// Cursor for Users result
+    ///
+    /// - Parameter result: CursorResult<User>
+    /// - Returns: APICursor<User>
+    public func cursor(_ result: CursorResult<User>) -> APICursor<User> {
+        return super.cursor(result)
     }
 
     /// Echo from Tenancy API using `GET`

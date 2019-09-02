@@ -6,6 +6,7 @@
 //  Copyright © 2019 Moin' Victor. All rights reserved.
 //
 
+import Foundation
 import Nimble
 import Quick
 

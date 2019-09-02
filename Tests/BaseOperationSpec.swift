@@ -11,6 +11,8 @@ import Quick
 import Nimble
 @testable import Upvest
 
+// swiftlint:disable type_body_length function_body_length cyclomatic_complexity
+
 class BaseOperationSpec: QuickSpec {
 
     override func spec() {
@@ -52,7 +54,6 @@ class BaseOperationSpec: QuickSpec {
                 let configuration = UpvestConfiguration.sample()
                 let instance = Upvest(configuration: configuration)
                 instance.api = api
-                
                 instance.clientele().authenticate(username: "user", password: "password")
 
                 expect(client.retry).toEventually(equal(1))
@@ -68,7 +69,7 @@ class BaseOperationSpec: QuickSpec {
                 api.add(result: authResult)
                 api.add(result: regPushSuccessResult)
 
-                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { _ in
 
                 })
 
@@ -86,7 +87,7 @@ class BaseOperationSpec: QuickSpec {
                 api.add(result: regPushFailureResult)
                 api.add(result: regPushSuccessResult)
 
-                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { _ in
 
                 })
 
@@ -99,7 +100,7 @@ class BaseOperationSpec: QuickSpec {
                 api.add(result: unauthorized)
                 api.add(result: authResult)
 
-                upvest.clientele().getEcho(echo: "Hello", callback: { (result) in
+                upvest.clientele().getEcho(echo: "Hello", callback: { _ in
 
                 })
 

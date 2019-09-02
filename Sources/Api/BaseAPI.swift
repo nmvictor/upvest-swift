@@ -40,7 +40,7 @@ public class BaseAPI {
     ///
     /// - Parameter result: CursorResult<T>
     /// - Returns: APICursor<T>
-    public func cursor<T: Codable>(_ result: CursorResult<T>) -> APICursor<T> {
+    internal func cursor<T: Codable>(_ result: CursorResult<T>) -> APICursor<T> {
         return APICursor(from: result, authManager: self.authManager, api: self.api, clientId: self.clientId, clientSecret: self.clientSecret, scope: self.scope, allowOAuth: allowOAuth())
     }
 

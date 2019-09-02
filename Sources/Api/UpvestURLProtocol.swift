@@ -17,7 +17,7 @@ class UpvestURLProtocol: URLProtocol {
   fileprivate static let handledKey = "handled"
 
   /// The connection to use for HTTP requests
-  fileprivate var connection: NSURLConnection?
+  fileprivate var connection: URLSessionDataTask?
 
   /// The data received from the connection
   fileprivate var data: Data?
@@ -65,43 +65,31 @@ class UpvestURLProtocol: URLProtocol {
     self.newRequest = req
 
     UpvestURLProtocol.setProperty(true, forKey: UpvestURLProtocol.handledKey, in: newRequest!)
+    connection = URLSession.shared.dataTask(with: newRequest as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+        if let error = error {
+            self.client?.urlProtocol(self, didFailWithError: error as NSError)
+            print("Request Error: \n\(error.localizedDescription)")
+            return
+        } else if let response = response {
+            let policy = URLCache.StoragePolicy(rawValue: self.request.cachePolicy.rawValue) ?? .notAllowed
+            self.response = response
+            self.data = Data()
+            self.client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: policy)
+            self.client?.urlProtocolDidFinishLoading(self)
+            if let data = data {
+                self.client?.urlProtocol(self, didLoad: data)
+                self.data?.append(data)
+            }
+            print("Request Response: \(response), \n\(data?.toString() ?? "")")
+        }
+    })
+    connection?.resume()
 
-    connection = NSURLConnection(request: newRequest as URLRequest, delegate: self)
-
-    // Upvest.shared.configuration.logger?.log(request: newRequest as URLRequest)
   }
 
   /// Stops loading the request in question.
   override func stopLoading() {
     connection?.cancel()
     connection = nil
-  }
-}
-
-extension UpvestURLProtocol: NSURLConnectionDelegate, NSURLConnectionDataDelegate {
-  func connection(_ connection: NSURLConnection, didReceive response: URLResponse) {
-    let policy = URLCache.StoragePolicy(rawValue: request.cachePolicy.rawValue) ?? .notAllowed
-    client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: policy)
-
-    self.response = response
-    self.data = Data()
-  }
-
-  func connection(_ connection: NSURLConnection, didReceive data: Data) {
-    client?.urlProtocol(self, didLoad: data)
-    self.data?.append(data)
-  }
-
-  func connectionDidFinishLoading(_ connection: NSURLConnection) {
-    client?.urlProtocolDidFinishLoading(self)
-
-    if let response = response {
-        print("Request Response: \(response), \n\(data?.toString() ?? "")")
-    }
-  }
-
-  func connection(_ connection: NSURLConnection, didFailWithError error: Error) {
-    client?.urlProtocol(self, didFailWithError: error as NSError)
-    print("Request Error: \n\(error.localizedDescription)")
   }
 }

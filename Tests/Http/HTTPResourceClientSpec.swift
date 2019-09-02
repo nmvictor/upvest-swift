@@ -1,7 +1,17 @@
+//
+//  HTTPResourceClientSpec.swift
+//  UpvestTests
+//
+//  Created by Moin' Victor on 23/08/2019.
+//  Copyright © 2019 Upvest. All rights reserved.
+//
+
 import Foundation
 import Quick
 import Nimble
 @testable import Upvest
+
+// swiftlint:disable type_body_length function_body_length cyclomatic_complexity
 
 class HTTPResourceClientSpec: QuickSpec {
   override func spec() {

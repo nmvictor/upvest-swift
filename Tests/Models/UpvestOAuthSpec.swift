@@ -13,7 +13,7 @@ class UpvestOAuthSpec: QuickSpec {
                         "expires_in": 36000 as AnyObject,
                         "token_type": "Bearer" as AnyObject,
                         "scope": "read write echo wallet transaction" as AnyObject,
-                        "refresh_token": "iYmTFUisTiNSwdwFaNQ63U1a6bOBNs" as AnyObject,
+                        "refresh_token": "iYmTFUisTiNSwdwFaNQ63U1a6bOBNs" as AnyObject
                     ]
                     let auth = UpvestOAuth.fromJSON(dictionary: dictionary)
                     expect(auth?.accessToken).to(equal("zSMWkPGyMatY8oYVsFEv1Pr9sjMS3Q"))

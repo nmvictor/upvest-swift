@@ -1,0 +1,31 @@
+included:
+  - Sources
+  - Tests
+  - IntegrationTests
+
+line_length: 200
+comma:
+colon:
+identifier_name:
+  excluded:
+    - SDK_VERSION
+    - MAX_RETRY
+    - MAX_SEC
+    - _self
+    - id
+    - x
+    - y
+    - r
+    - s
+    - i
+function_parameter_count:
+  warning: 6
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - file_length
+  - type_body_length
+  - multiple_closures_with_trailing_closure
+  - nesting
+  - cyclomatic_complexity
+  - syntactic_sugar
+  - empty_parentheses_with_trailing_closure

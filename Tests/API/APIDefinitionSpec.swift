@@ -6,6 +6,8 @@
 //  Copyright © 2019 Moin' Victor. All rights reserved.
 //
 
+// swiftlint:disable type_body_length function_body_length cyclomatic_complexity
+
 import Foundation
 import Nimble
 import Quick
@@ -45,7 +47,7 @@ class APIDefinitionSpec: QuickSpec {
                 expect(resource.path).to(equal("/clientele/oauth2/token"))
                 expect(resource.requestBody?.asDict() ?? [:] == [
                     "grant_type": "refresh_token",
-                    "refresh_token": refreshToken,
+                    "refresh_token": refreshToken
                     ] as JSONDictionary).to(equal(true))
                 expect(resource.headers.values.contains("application/x-www-form-urlencoded")).to(beTrue())
                 expect(resource.method.rawValue).to(equal("POST"))
@@ -205,6 +207,92 @@ class APIDefinitionSpec: QuickSpec {
                 expect(resource.path).to(equal("/assets/\(assetId)"))
                 expect(resource.method.rawValue).to(equal("GET"))
                 expect(resource.requestBody?.asDict() ?? [:] == [:] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#createWallet") {
+            it("creates a resource") {
+                let assetId = "A-UID"
+                let type: Wallet.`Type` = .encrypted
+                let resource: HTTPResource = APIDefinition.createWallet(assetId: assetId, type: type, index: 10, password: "pass")
+                expect(resource.path).to(equal("/wallets"))
+                expect(resource.method.rawValue).to(equal("POST"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "asset_id": assetId as AnyObject,
+                    "type": type.rawValue as AnyObject,
+                    "password": "pass" as AnyObject,
+                    "index": 10 as AnyObject] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#getWalletInfomation") {
+            it("creates a resource") {
+                let walletId = "UID"
+                let resource: HTTPResource = APIDefinition.getWalletInfomation(walletId: walletId)
+                expect(resource.path).to(equal("/wallets/\(walletId)"))
+                expect(resource.method.rawValue).to(equal("GET"))
+                expect(resource.requestBody?.asDict() ?? [:] == [:] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#createTransaction") {
+            it("creates a resource") {
+                let walletId = "UID"
+                let assetId = "A-UID"
+                let resource: HTTPResource = APIDefinition.createTransaction(walletId: walletId, assetId: assetId, quantity: "100", fee: "10", password: "pass")
+                expect(resource.path).to(equal("/wallets/\(walletId)/transactions"))
+                expect(resource.method.rawValue).to(equal("POST"))
+                expect(resource.requestBody?.asDict() ?? [:] == [
+                    "asset_id": assetId,
+                    "quantity": "100",
+                    "password": "pass",
+                    "fee": "10"] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#getTransactionInfomation") {
+            it("creates a resource") {
+                let walletId = "UID"
+                let tranxId = "TRANX-UID"
+                let resource: HTTPResource = APIDefinition.getTransactionInfomation(walletId: walletId, tranxId: tranxId)
+                 expect(resource.path).to(equal("/wallets/\(walletId)/transactions/\(tranxId)"))
+                expect(resource.method.rawValue).to(equal("GET"))
+                expect(resource.requestBody?.asDict() ?? [:] == [:] as JSONDictionary).to(equal(true))
+                expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Timestamp")).to(beTrue())
+                expect(resource.headers.keys.contains("X-UP-API-Passphrase")).to(beTrue())
+            }
+        }
+
+        describe("#signWithWallet") {
+            it("creates a resource") {
+                let walletId = "w-id"
+                let resource: HTTPResource = APIDefinition.signWithWallet(walletId: walletId, toSign: "my-hash", inputFormat: .hex, outputFormat: .base64LittleEndian, password: "pass")
+                expect(resource.path).to(equal("/wallets/\(walletId)/sign"))
+                expect(resource.method.rawValue).to(equal("POST"))
+                expect(resource.requestBody?.asDict() ?? [:] == ["to_sign": "my-hash", "input_format": Wallet.SignInputFormat.hex.rawValue, "output_format": Wallet.SignOutputFormat.base64LittleEndian.rawValue, "password": "pass"] as JSONDictionary).to(equal(true))
                 expect(resource.headers.keys.contains("X-UP-API-Key")).to(beTrue())
                 expect(resource.headers.keys.contains("X-UP-API-Signed-Path")).to(beTrue())
                 expect(resource.headers.keys.contains("X-UP-API-Signature")).to(beTrue())

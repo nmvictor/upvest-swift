@@ -6,7 +6,7 @@
 //  Copyright © 2019 Upvest. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /// A closure used as a completion handler for interacting with the Upvest
 /// object.
@@ -16,7 +16,7 @@ private var upvestInstance: Upvest!
 
 /// The main entry point for usage of the Upvest API.
 @objc public class Upvest: NSObject {
-    
+
     /// The released version of the Upvest SDK
     public static let SDK_VERSION = "1.0.0"
 
@@ -35,6 +35,7 @@ private var upvestInstance: Upvest!
             clienteleApi.api = api
             tenancyApi.api = api
             assetsApi.api = api
+            walletsApi.api = api
         }
     }
 
@@ -49,6 +50,9 @@ private var upvestInstance: Upvest!
 
     /// An object that handles Assets API
     private let assetsApi: AssetsAPI
+
+    /// An object that handles Wallets API
+    private let walletsApi: WalletsAPI
 
     /// An object that allows for persisting data locally
     internal var storage: LocalStorageType
@@ -109,6 +113,13 @@ private var upvestInstance: Upvest!
         return assetsApi
     }
 
+    /// Get Wallets API
+    ///
+    /// - Returns: The Wallets API
+    func wallets() -> WalletsAPI {
+        return walletsApi
+    }
+
     ///
     /// Get the storage according the storage type choosen by the user.
     /// - returns:
@@ -133,7 +144,7 @@ private var upvestInstance: Upvest!
         self.clienteleApi = ClienteleAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
         self.tenancyApi = TenancyAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
         self.assetsApi = AssetsAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
-
+        self.walletsApi = WalletsAPI(authManager: authManager, api: api, clientId: self.configuration.clientId, clientSecret: self.configuration.clientSecret, scope: self.configuration.scope)
     }
 
     ///

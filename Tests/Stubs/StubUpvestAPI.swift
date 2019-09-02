@@ -31,14 +31,14 @@ class StubUpvestAPI: UpvestAPIType {
   func clearResponse() {
     self.results.removeAll()
   }
-  
+
   func request<A>(resource: HTTPResource<A>, completion: APICompletion<A>?) {
     request(authToken: "", resource: resource, completion: completion)
   }
 
   func request<A>(authToken: String?, resource: HTTPResource<A>, completion: APICompletion<A>?) {
     var res: Any?
-    if (!results.isEmpty) {
+    if !results.isEmpty {
       res = self.results[0]
     }
     guard let result = self.results.remove(at: 0) as? Result<A, ResourceError> else {

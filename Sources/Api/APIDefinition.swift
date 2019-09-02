@@ -227,7 +227,109 @@ enum APIDefinition {
             path: path,
             method: .GET,
             requestParameters: payload,
-            headers: signedHeaders.merged(with: ["Content-Type": "application/x-www-form-urlencoded"]),
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource to retrieve Wallet Information
+    ///
+    /// - parameters:
+    ///   - walletId: Unique wallet ID.
+    /// - Returns: The HttpResource
+    static func getWalletInfomation(walletId: String) -> HTTPResource<Wallet> {
+        let path = "/wallets/\(walletId)"
+        let payload = JSONDictionary()
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.GET.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .GET,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for creating a new Wallet
+    ///
+    /// - Parameters:
+    ///   - assetId: The ID of the asset the wallet should hold.
+    ///   - type: The type of wallet to create
+    ///   - index: BIP44 index.
+    ///   - password: The password is necessary to decrypt the Seed data to create the private key for the new wallet, and then to encrypt the new private key.
+    /// - Returns: The HttpResource
+    static func createWallet(assetId: String, type: Wallet.`Type`, index: Int, password: String) -> HTTPResource<Wallet> {
+        let path = "/wallets"
+        let payload = ["asset_id": assetId, "type": type.rawValue, "password": password, "index": index] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .POST,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource to retrieve Transaction Information
+    ///
+    /// - parameters:
+    ///   - walletId: Unique wallet ID.
+    ///   - tranxId: Unique Transaction ID.
+    /// - Returns: The HttpResource
+    static func getTransactionInfomation(walletId: String, tranxId: String) -> HTTPResource<Transaction> {
+        let path = "/wallets/\(walletId)/transactions/\(tranxId)"
+        let payload = JSONDictionary()
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.GET.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .GET,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// A resource for creating a new Transaction
+    ///
+    /// - Parameters:
+    ///   - walletId: Unique wallet ID.
+    ///   - assetId: The ID of the asset the wallet should hold.
+    ///   - quantity: The amount to send.
+    ///   - fee: The fee to be paid for sending the transaction.
+    ///   - password: The password is necessary to decrypt the Seed data to create the private key for the new wallet, and then to encrypt the new private key.
+    /// - Returns: The HttpResource
+    static func createTransaction(walletId: String, assetId: String, quantity: String, fee: String, password: String) -> HTTPResource<Transaction> {
+        let path = "/wallets/\(walletId)/transactions"
+        let payload = ["asset_id": assetId, "quantity": quantity, "password": password, "fee": fee] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .POST,
+            requestParameters: payload,
+            headers: signedHeaders,
+            parse: fromJSONDictionary
+        )
+    }
+
+    /// Sign (the hash of) data with the private key corresponding to this wallet.
+    ///
+    /// - Parameters:
+    ///   - walletId: The unique ID of the wallet to create a signature with.
+    ///   - toSign: A string representation of the 32 byte long hash to be signed. The format is determined by the "input_format" parameter.
+    ///   - inputFormat: The name of the string format for the hash to be signed.
+    ///   - outputFormat: The name of the string format for the big numbers in the signature. (Some JSON implementations can not handle integers which need more than 64 bits to be represented.)
+    ///   - password: The password is necessary to decrypt the Seed data to create the private key for the new wallet, and then to encrypt the new private key.
+    /// - Returns: The HttpResource
+    static func signWithWallet(walletId: String, toSign: String, inputFormat: Wallet.SignInputFormat, outputFormat: Wallet.SignOutputFormat, password: String) -> HTTPResource<SignedWithWalletResult> {
+        let path = "/wallets/\(walletId)/sign"
+        let payload = ["to_sign": toSign, "input_format": inputFormat.rawValue, "output_format": outputFormat.rawValue, "password": password] as JSONDictionary
+        let signedHeaders = signedAuthHeaders(method: HTTPMethod.POST.rawValue, path: path, payload: payload)
+        return jsonResource(
+            path: path,
+            method: .POST,
+            requestParameters: payload,
+            headers: signedHeaders,
             parse: fromJSONDictionary
         )
     }
@@ -406,7 +508,7 @@ enum APIDefinition {
     private static func fromJSONDictionary<T: Codable>(jsonDict: JSONDictionary) -> T? {
         var result: T?
         let decoder = JSONDecoder()
-        if let data =  jsonDict.asData{
+        if let data =  jsonDict.asData {
            result = try? decoder.decode(T.self, from: data)
         }
         return result

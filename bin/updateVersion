@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -e
+
+if [ "$#" != "1" ]; then
+    echo "Please specify a version tag."
+    exit 1
+else
+    newVersion=$1
+fi
+
+if [[ $newVersion =~ ^[0-9]\.[0-9]\.[0-9]$ ]]; then
+    echo "The tag name is correct"
+else
+    echo "Please specify a correct version tag."
+    exit 1
+fi
+
+BaseFilePath=$PWD
+plist="$BaseFilePath/Sources/Info.plist"
+upvest="$BaseFilePath/Sources/Upvest.swift"
+upvestPodSpec="$BaseFilePath/Upvest.podspec"
+
+sed -i "" "s?\(.*SDK_VERSION.*=.*\"\)[0-9]\.[0-9]\.[0-9]\(.*\)?\1$newVersion\2?g" $upvest 
+
+sed -i "" "s?\(.*\.version.*=.*'\)[0-9]\.[0-9]\.[0-9]\(.*\)?\1$newVersion\2?g" $upvestPodSpec
+
+/usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString $newVersion" $plist

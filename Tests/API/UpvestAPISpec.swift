@@ -6,6 +6,8 @@
 //  Copyright © 2019 Moin' Victor. All rights reserved.
 //
 
+// swiftlint:disable type_body_length cyclomatic_complexity
+
 import Foundation
 @testable import Upvest
 import Nimble

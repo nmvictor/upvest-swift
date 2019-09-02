@@ -7,6 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0FF86A2317F3FE007D2EE0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF8692317F3FE007D2EE0 /* Wallet.swift */; };
+		2F0FF86E231866BC007D2EE0 /* WalletSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF86D231866BC007D2EE0 /* WalletSpec.swift */; };
+		2F0FF87A231911EA007D2EE0 /* WalletsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF878231911DE007D2EE0 /* WalletsAPI.swift */; };
+		2F0FF87C2319149B007D2EE0 /* GetWalletDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF87B2319149B007D2EE0 /* GetWalletDetailsOperation.swift */; };
+		2F0FF88323192AE1007D2EE0 /* WalletsAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF87F23192358007D2EE0 /* WalletsAPISpec.swift */; };
+		2F0FF885231C49D1007D2EE0 /* CreateWalletOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF884231C49D1007D2EE0 /* CreateWalletOperation.swift */; };
+		2F0FF888231C64C5007D2EE0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF887231C64C5007D2EE0 /* Transaction.swift */; };
+		2F0FF88C231C6C19007D2EE0 /* TransactionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF88B231C6C19007D2EE0 /* TransactionSpec.swift */; };
+		2F0FF88E231CE82A007D2EE0 /* CreateTransactionOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF88D231CE82A007D2EE0 /* CreateTransactionOperation.swift */; };
+		2F0FF890231CEA4E007D2EE0 /* GetTransactionDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF88F231CEA4E007D2EE0 /* GetTransactionDetailsOperation.swift */; };
+		2F0FF892231CF85F007D2EE0 /* SignedWithWalletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF891231CF85F007D2EE0 /* SignedWithWalletResult.swift */; };
+		2F0FF894231CFC2E007D2EE0 /* SignWithWalletOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF893231CFC2E007D2EE0 /* SignWithWalletOperation.swift */; };
+		2F0FF896231D988E007D2EE0 /* SignedWithWalletResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0FF895231D988E007D2EE0 /* SignedWithWalletResultSpec.swift */; };
+		2F0FF89C231DAB47007D2EE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0FF89B231DAB47007D2EE0 /* Foundation.framework */; };
+		2F0FF89D231DAB5F007D2EE0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F0FF89B231DAB47007D2EE0 /* Foundation.framework */; };
+		2F0FF8A7231DAE11007D2EE0 /* UsersResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A1231DAE10007D2EE0 /* UsersResult.json */; };
+		2F0FF8A8231DAE11007D2EE0 /* SignedWithWalletResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A2231DAE10007D2EE0 /* SignedWithWalletResult.json */; };
+		2F0FF8A9231DAE11007D2EE0 /* Transaction.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A3231DAE10007D2EE0 /* Transaction.json */; };
+		2F0FF8AA231DAE11007D2EE0 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A4231DAE10007D2EE0 /* User.json */; };
+		2F0FF8AB231DAE11007D2EE0 /* Wallet.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A5231DAE11007D2EE0 /* Wallet.json */; };
+		2F0FF8AC231DAE11007D2EE0 /* Asset.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F0FF8A6231DAE11007D2EE0 /* Asset.json */; };
 		2FC83040230AB3E300ECA72F /* Upvest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC83036230AB3E300ECA72F /* Upvest.framework */; };
 		2FC83045230AB3E300ECA72F /* UpvestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC83044230AB3E300ECA72F /* UpvestTests.swift */; };
 		2FC83047230AB3E300ECA72F /* Upvest.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FC83039230AB3E300ECA72F /* Upvest.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +51,6 @@
 		2FE1C0ED230BDC390026BE74 /* UserSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0DB230BDBA70026BE74 /* UserSpec.swift */; };
 		2FE1C0F0230BDC580026BE74 /* StubHTTPResourceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */; };
 		2FE1C0F1230BDC620026BE74 /* APIDefinitionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */; };
-		2FE1C0F2230BDCE00026BE74 /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FE1C0E7230BDBB30026BE74 /* User.json */; };
 		2FE1C0F5230BE0230026BE74 /* UpvestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C0F4230BE0230026BE74 /* UpvestAPI.swift */; };
 		2FE1C116230C505A0026BE74 /* LocalStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C10F230C50580026BE74 /* LocalStorageType.swift */; };
 		2FE1C117230C505A0026BE74 /* LocalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C110230C50580026BE74 /* LocalObject.swift */; };
@@ -59,7 +79,6 @@
 		2FE1C15B230EA3C20026BE74 /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE1C15A230EA3C20026BE74 /* Hmac.swift */; };
 		2FEC03F42316BD1800E2A83B /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F32316BD1800E2A83B /* Asset.swift */; };
 		2FEC03F62316E84200E2A83B /* AssetSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F52316E84200E2A83B /* AssetSpec.swift */; };
-		2FEC03F82316E91700E2A83B /* Asset.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FEC03F72316E91700E2A83B /* Asset.json */; };
 		2FEC03FA2316EF2500E2A83B /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03F92316EF2500E2A83B /* BaseAPI.swift */; };
 		2FEC03FC2316F2ED00E2A83B /* AssetsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */; };
 		2FEC03FE2316F49200E2A83B /* GetAssetDetailsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */; };
@@ -69,7 +88,6 @@
 		2FF5FBC4230FDD1D00EFDB92 /* GetUsersOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */; };
 		2FF5FBC6230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBC5230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift */; };
 		2FF5FBCB230FE4EF00EFDB92 /* TenancyAPISpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBC7230FE2F400EFDB92 /* TenancyAPISpec.swift */; };
-		2FF5FBCE230FF15D00EFDB92 /* UsersResult.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FF5FBCC230FF15900EFDB92 /* UsersResult.json */; };
 		2FF5FBD0230FF20B00EFDB92 /* CursorResultSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBCF230FF20B00EFDB92 /* CursorResultSpec.swift */; };
 		2FF5FBD523102B0F00EFDB92 /* GetCursorResultOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBD123102A5D00EFDB92 /* GetCursorResultOperation.swift */; };
 		2FF5FBD72310308B00EFDB92 /* APICursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF5FBD62310308B00EFDB92 /* APICursor.swift */; };
@@ -90,6 +108,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0FF8692317F3FE007D2EE0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		2F0FF86D231866BC007D2EE0 /* WalletSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletSpec.swift; sourceTree = "<group>"; };
+		2F0FF878231911DE007D2EE0 /* WalletsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsAPI.swift; sourceTree = "<group>"; };
+		2F0FF87B2319149B007D2EE0 /* GetWalletDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWalletDetailsOperation.swift; sourceTree = "<group>"; };
+		2F0FF87F23192358007D2EE0 /* WalletsAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsAPISpec.swift; sourceTree = "<group>"; };
+		2F0FF884231C49D1007D2EE0 /* CreateWalletOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletOperation.swift; sourceTree = "<group>"; };
+		2F0FF887231C64C5007D2EE0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		2F0FF88B231C6C19007D2EE0 /* TransactionSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSpec.swift; sourceTree = "<group>"; };
+		2F0FF88D231CE82A007D2EE0 /* CreateTransactionOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTransactionOperation.swift; sourceTree = "<group>"; };
+		2F0FF88F231CEA4E007D2EE0 /* GetTransactionDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionDetailsOperation.swift; sourceTree = "<group>"; };
+		2F0FF891231CF85F007D2EE0 /* SignedWithWalletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedWithWalletResult.swift; sourceTree = "<group>"; };
+		2F0FF893231CFC2E007D2EE0 /* SignWithWalletOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignWithWalletOperation.swift; sourceTree = "<group>"; };
+		2F0FF895231D988E007D2EE0 /* SignedWithWalletResultSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedWithWalletResultSpec.swift; sourceTree = "<group>"; };
+		2F0FF899231D9F54007D2EE0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F0FF89A231DA559007D2EE0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		2F0FF89B231DAB47007D2EE0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2F0FF8A1231DAE10007D2EE0 /* UsersResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsersResult.json; sourceTree = "<group>"; };
+		2F0FF8A2231DAE10007D2EE0 /* SignedWithWalletResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SignedWithWalletResult.json; sourceTree = "<group>"; };
+		2F0FF8A3231DAE10007D2EE0 /* Transaction.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Transaction.json; sourceTree = "<group>"; };
+		2F0FF8A4231DAE10007D2EE0 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		2F0FF8A5231DAE11007D2EE0 /* Wallet.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Wallet.json; sourceTree = "<group>"; };
+		2F0FF8A6231DAE11007D2EE0 /* Asset.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Asset.json; sourceTree = "<group>"; };
 		2FC83036230AB3E300ECA72F /* Upvest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Upvest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC83039230AB3E300ECA72F /* Upvest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Upvest.h; sourceTree = "<group>"; };
 		2FC8303A230AB3E300ECA72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +156,6 @@
 		2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDefinitionSpec.swift; sourceTree = "<group>"; };
 		2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubUpvestAPI.swift; sourceTree = "<group>"; };
 		2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHTTPResourceClient.swift; sourceTree = "<group>"; };
-		2FE1C0E7230BDBB30026BE74 /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
 		2FE1C0F4230BE0230026BE74 /* UpvestAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestAPI.swift; sourceTree = "<group>"; };
 		2FE1C0F6230BE1250026BE74 /* UpvestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpvestSpec.swift; sourceTree = "<group>"; };
 		2FE1C10F230C50580026BE74 /* LocalStorageType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageType.swift; sourceTree = "<group>"; };
@@ -146,7 +185,6 @@
 		2FE1C160230EA5850026BE74 /* libcryptex.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcryptex.tbd; path = usr/lib/libcryptex.tbd; sourceTree = SDKROOT; };
 		2FEC03F32316BD1800E2A83B /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		2FEC03F52316E84200E2A83B /* AssetSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetSpec.swift; sourceTree = "<group>"; };
-		2FEC03F72316E91700E2A83B /* Asset.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Asset.json; sourceTree = "<group>"; };
 		2FEC03F92316EF2500E2A83B /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsAPI.swift; sourceTree = "<group>"; };
 		2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAssetDetailsOperation.swift; sourceTree = "<group>"; };
@@ -156,7 +194,6 @@
 		2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUsersOperation.swift; sourceTree = "<group>"; };
 		2FF5FBC5230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeySignedEchoOperation.swift; sourceTree = "<group>"; };
 		2FF5FBC7230FE2F400EFDB92 /* TenancyAPISpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenancyAPISpec.swift; sourceTree = "<group>"; };
-		2FF5FBCC230FF15900EFDB92 /* UsersResult.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = UsersResult.json; sourceTree = "<group>"; };
 		2FF5FBCF230FF20B00EFDB92 /* CursorResultSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursorResultSpec.swift; sourceTree = "<group>"; };
 		2FF5FBD123102A5D00EFDB92 /* GetCursorResultOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCursorResultOperation.swift; sourceTree = "<group>"; };
 		2FF5FBD62310308B00EFDB92 /* APICursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICursor.swift; sourceTree = "<group>"; };
@@ -171,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0FF89D231DAB5F007D2EE0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +216,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0FF89C231DAB47007D2EE0 /* Foundation.framework in Frameworks */,
 				2FE1C0D8230BDAE70026BE74 /* Nimble.framework in Frameworks */,
 				2FE1C0D9230BDAE70026BE74 /* Quick.framework in Frameworks */,
 				2FC83040230AB3E300ECA72F /* Upvest.framework in Frameworks */,
@@ -187,9 +226,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0FF87D23191FA8007D2EE0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2FF5FBD8231039BC00EFDB92 /* CreateUserOperation.swift */,
+				2FF5FBDA231039D200EFDB92 /* DeleteUserOperation.swift */,
+				2FF5FBDC23103FD000EFDB92 /* UpdateUserPasswordOperation.swift */,
+				2FF5FBDE2310428B00EFDB92 /* ResetUserPasswordOperation.swift */,
+				2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		2F0FF87E2319220F007D2EE0 /* Echo */ = {
+			isa = PBXGroup;
+			children = (
+				2FE1C14F230E8C770026BE74 /* OAuth2EchoOperation.swift */,
+				2FF5FBC5230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift */,
+			);
+			path = Echo;
+			sourceTree = "<group>";
+		};
+		2F0FF886231C4B4E007D2EE0 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				2F0FF87B2319149B007D2EE0 /* GetWalletDetailsOperation.swift */,
+				2F0FF884231C49D1007D2EE0 /* CreateWalletOperation.swift */,
+				2F0FF88D231CE82A007D2EE0 /* CreateTransactionOperation.swift */,
+				2F0FF88F231CEA4E007D2EE0 /* GetTransactionDetailsOperation.swift */,
+				2F0FF893231CFC2E007D2EE0 /* SignWithWalletOperation.swift */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		2F0FF8A0231DADF1007D2EE0 /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				2F0FF8A6231DAE11007D2EE0 /* Asset.json */,
+				2F0FF8A2231DAE10007D2EE0 /* SignedWithWalletResult.json */,
+				2F0FF8A3231DAE10007D2EE0 /* Transaction.json */,
+				2F0FF8A4231DAE10007D2EE0 /* User.json */,
+				2F0FF8A1231DAE10007D2EE0 /* UsersResult.json */,
+				2F0FF8A5231DAE11007D2EE0 /* Wallet.json */,
+			);
+			name = JSONs;
+			sourceTree = "<group>";
+		};
 		2FC8302C230AB3E300ECA72F = {
 			isa = PBXGroup;
 			children = (
+				2F0FF89A231DA559007D2EE0 /* Package.swift */,
+				2F0FF899231D9F54007D2EE0 /* README.md */,
 				2FC83038230AB3E300ECA72F /* Sources */,
 				2FC83043230AB3E300ECA72F /* Tests */,
 				2FC83037230AB3E300ECA72F /* Products */,
@@ -236,6 +323,7 @@
 				2FE1C131230D301F0026BE74 /* Storage */,
 				2FE1C12D230D2EFF0026BE74 /* API */,
 				2FE1C0DA230BDB720026BE74 /* Stubs */,
+				2F0FF8A0231DADF1007D2EE0 /* JSONs */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -259,15 +347,11 @@
 				2FE1C149230E85780026BE74 /* AuthOperation.swift */,
 				2FE1C0BA230BD50D0026BE74 /* BaseOperation.swift */,
 				2FE1C0B8230BD50D0026BE74 /* BaseQueueOperation.swift */,
-				2FF5FBC3230FDD1D00EFDB92 /* GetUsersOperation.swift */,
-				2FE1C14F230E8C770026BE74 /* OAuth2EchoOperation.swift */,
-				2FF5FBC5230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift */,
 				2FF5FBD123102A5D00EFDB92 /* GetCursorResultOperation.swift */,
-				2FF5FBD8231039BC00EFDB92 /* CreateUserOperation.swift */,
-				2FF5FBDA231039D200EFDB92 /* DeleteUserOperation.swift */,
-				2FF5FBDC23103FD000EFDB92 /* UpdateUserPasswordOperation.swift */,
-				2FF5FBDE2310428B00EFDB92 /* ResetUserPasswordOperation.swift */,
 				2FEC03FD2316F49200E2A83B /* GetAssetDetailsOperation.swift */,
+				2F0FF886231C4B4E007D2EE0 /* Wallet */,
+				2F0FF87E2319220F007D2EE0 /* Echo */,
+				2F0FF87D23191FA8007D2EE0 /* User */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -285,6 +369,7 @@
 				2FF5FBD62310308B00EFDB92 /* APICursor.swift */,
 				2FEC03F92316EF2500E2A83B /* BaseAPI.swift */,
 				2FEC03FB2316F2ED00E2A83B /* AssetsAPI.swift */,
+				2F0FF878231911DE007D2EE0 /* WalletsAPI.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -297,6 +382,9 @@
 				2FE1C14D230E8A220026BE74 /* Echo.swift */,
 				2FF5FBBF230FD39700EFDB92 /* CursorResult.swift */,
 				2FEC03F32316BD1800E2A83B /* Asset.swift */,
+				2F0FF8692317F3FE007D2EE0 /* Wallet.swift */,
+				2F0FF887231C64C5007D2EE0 /* Transaction.swift */,
+				2F0FF891231CF85F007D2EE0 /* SignedWithWalletResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +400,7 @@
 		2FE1C0D1230BD7BD0026BE74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F0FF89B231DAB47007D2EE0 /* Foundation.framework */,
 				2FE1C160230EA5850026BE74 /* libcryptex.tbd */,
 				2FE1C0D3230BD7BD0026BE74 /* Nimble.framework */,
 				2FE1C0D2230BD7BD0026BE74 /* Quick.framework */,
@@ -325,11 +414,8 @@
 				2FE1C14B230E87520026BE74 /* StubUpvestWithMockStorage.swift */,
 				2FE1C134230D33720026BE74 /* StubStorage.swift */,
 				2FE1C135230D33720026BE74 /* StubURLSession.swift */,
-				2FE1C0E7230BDBB30026BE74 /* User.json */,
 				2FE1C0E5230BDBB30026BE74 /* StubUpvestAPI.swift */,
 				2FE1C0E6230BDBB30026BE74 /* StubHTTPResourceClient.swift */,
-				2FF5FBCC230FF15900EFDB92 /* UsersResult.json */,
-				2FEC03F72316E91700E2A83B /* Asset.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -354,6 +440,9 @@
 				2FE1C154230EA0230026BE74 /* EchoSpec.swift */,
 				2FF5FBCF230FF20B00EFDB92 /* CursorResultSpec.swift */,
 				2FEC03F52316E84200E2A83B /* AssetSpec.swift */,
+				2F0FF86D231866BC007D2EE0 /* WalletSpec.swift */,
+				2F0FF88B231C6C19007D2EE0 /* TransactionSpec.swift */,
+				2F0FF895231D988E007D2EE0 /* SignedWithWalletResultSpec.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +455,7 @@
 				2FE1C0DD230BDBA70026BE74 /* APIDefinitionSpec.swift */,
 				2FF5FBC7230FE2F400EFDB92 /* TenancyAPISpec.swift */,
 				2FEC03FF2316FBD700E2A83B /* AssetsAPISpec.swift */,
+				2F0FF87F23192358007D2EE0 /* WalletsAPISpec.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -433,6 +523,7 @@
 				2FC83032230AB3E300ECA72F /* Sources */,
 				2FC83033230AB3E300ECA72F /* Frameworks */,
 				2FC83034230AB3E300ECA72F /* Resources */,
+				2F0FF8AE231DB86C007D2EE0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -511,15 +602,35 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FE1C0F2230BDCE00026BE74 /* User.json in Resources */,
-				2FEC03F82316E91700E2A83B /* Asset.json in Resources */,
-				2FF5FBCE230FF15D00EFDB92 /* UsersResult.json in Resources */,
+				2F0FF8AA231DAE11007D2EE0 /* User.json in Resources */,
+				2F0FF8A7231DAE11007D2EE0 /* UsersResult.json in Resources */,
+				2F0FF8AB231DAE11007D2EE0 /* Wallet.json in Resources */,
+				2F0FF8A9231DAE11007D2EE0 /* Transaction.json in Resources */,
+				2F0FF8AC231DAE11007D2EE0 /* Asset.json in Resources */,
+				2F0FF8A8231DAE11007D2EE0 /* SignedWithWalletResult.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F0FF8AE231DB86C007D2EE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbin/lint\n";
+		};
 		2FE1C0F3230BDE400026BE74 /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -553,12 +664,18 @@
 				2FE1C15B230EA3C20026BE74 /* Hmac.swift in Sources */,
 				2FE1C119230C505A0026BE74 /* AuthManager.swift in Sources */,
 				2FF5FBC4230FDD1D00EFDB92 /* GetUsersOperation.swift in Sources */,
+				2F0FF87C2319149B007D2EE0 /* GetWalletDetailsOperation.swift in Sources */,
 				2FE1C0CD230BD61A0026BE74 /* User.swift in Sources */,
 				2FF5FBD523102B0F00EFDB92 /* GetCursorResultOperation.swift in Sources */,
 				2FE1C117230C505A0026BE74 /* LocalObject.swift in Sources */,
 				2FE1C14E230E8A220026BE74 /* Echo.swift in Sources */,
 				2FF5FBD9231039BC00EFDB92 /* CreateUserOperation.swift in Sources */,
+				2F0FF890231CEA4E007D2EE0 /* GetTransactionDetailsOperation.swift in Sources */,
+				2F0FF87A231911EA007D2EE0 /* WalletsAPI.swift in Sources */,
 				2FE1C0BD230BD50D0026BE74 /* BaseOperation.swift in Sources */,
+				2F0FF888231C64C5007D2EE0 /* Transaction.swift in Sources */,
+				2F0FF885231C49D1007D2EE0 /* CreateWalletOperation.swift in Sources */,
+				2F0FF894231CFC2E007D2EE0 /* SignWithWalletOperation.swift in Sources */,
 				2FE1C0AC230BD4D00026BE74 /* HTTPMethod.swift in Sources */,
 				2FE1C0D0230BD6A70026BE74 /* Foundation+Upvest.swift in Sources */,
 				2FE1C0BB230BD50D0026BE74 /* BaseQueueOperation.swift in Sources */,
@@ -567,6 +684,7 @@
 				2FE1C14A230E85780026BE74 /* AuthOperation.swift in Sources */,
 				2FE1C0C8230BD5D60026BE74 /* UpvestURLProtocol.swift in Sources */,
 				2FEC03FE2316F49200E2A83B /* GetAssetDetailsOperation.swift in Sources */,
+				2F0FF892231CF85F007D2EE0 /* SignedWithWalletResult.swift in Sources */,
 				2FF5FBDD23103FD000EFDB92 /* UpdateUserPasswordOperation.swift in Sources */,
 				2FF5FBDB231039D200EFDB92 /* DeleteUserOperation.swift in Sources */,
 				2FE1C11C230C505A0026BE74 /* LocalStorageKeys.swift in Sources */,
@@ -583,8 +701,10 @@
 				2FE1C0AE230BD4D00026BE74 /* HTTPResourceClient.swift in Sources */,
 				2FE1C0C6230BD5D60026BE74 /* UpvestError.swift in Sources */,
 				2FF5FBC6230FDD5E00EFDB92 /* ApiKeySignedEchoOperation.swift in Sources */,
+				2F0FF86A2317F3FE007D2EE0 /* Wallet.swift in Sources */,
 				2FE1C0C9230BD5D60026BE74 /* AuthTokenBehavior.swift in Sources */,
 				2FE1C11F230C50E70026BE74 /* UpvestOAuth.swift in Sources */,
+				2F0FF88E231CE82A007D2EE0 /* CreateTransactionOperation.swift in Sources */,
 				2FF5FBD72310308B00EFDB92 /* APICursor.swift in Sources */,
 				2FE1C118230C505A0026BE74 /* LocalValue.swift in Sources */,
 				2FF5FBC2230FDA2000EFDB92 /* TenancyAPI.swift in Sources */,
@@ -595,6 +715,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F0FF896231D988E007D2EE0 /* SignedWithWalletResultSpec.swift in Sources */,
+				2F0FF88323192AE1007D2EE0 /* WalletsAPISpec.swift in Sources */,
+				2F0FF86E231866BC007D2EE0 /* WalletSpec.swift in Sources */,
 				2FE1C0F1230BDC620026BE74 /* APIDefinitionSpec.swift in Sources */,
 				2FE1C127230D2EA40026BE74 /* HTTPResourceClientSpec.swift in Sources */,
 				2FE1C0F0230BDC580026BE74 /* StubHTTPResourceClient.swift in Sources */,
@@ -614,6 +737,7 @@
 				2FE1C130230D2FD00026BE74 /* UpvestSpec.swift in Sources */,
 				2FE1C14C230E87520026BE74 /* StubUpvestWithMockStorage.swift in Sources */,
 				2FE1C137230D33720026BE74 /* StubStorage.swift in Sources */,
+				2F0FF88C231C6C19007D2EE0 /* TransactionSpec.swift in Sources */,
 				2FE1C0EC230BDC1C0026BE74 /* StubUpvestAPI.swift in Sources */,
 				2FE1C12B230D2EA40026BE74 /* AuthManagerSpec.swift in Sources */,
 				2FE1C13A230D42130026BE74 /* UserDefaultsStorageSpec.swift in Sources */,
