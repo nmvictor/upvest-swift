@@ -14,7 +14,7 @@ pod 'Upvest'
 ### Carthage
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. To integrate Upvest into your Xcode project using Carthage, specify it in your Cartfile:
 ```
-github "upvestco/Upvest" "1.0.0"
+github "upvestco/upvest-swift" "1.0.0"
 ```
 ### Swift Package Manager
 The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but Upvest does support its use on supported platforms.
@@ -25,7 +25,7 @@ Once you have your Swift package set up, adding `Upvest` as a dependency is as e
 
 ```
 dependencies: [
-    .package(url: "https://github.com/upvestco/Upvest.git", from: "1.0.0")
+    .package(url: "https://github.com/upvestco/upvest-swift.git", from: "1.0.0")
 ]
 ```
 Then to your Target definition in `Package.swift   `

@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios
   s.swift_version    = '5.0'
   s.platforms        = { :ios => "8.0" }
-  s.source           = { :git => 'https://github.com/upvest/upvest-swift.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/upvestco/upvest-swift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = "10.0"
   s.osx.deployment_target = "10.7"
