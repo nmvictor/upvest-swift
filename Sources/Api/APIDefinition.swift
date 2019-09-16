@@ -442,7 +442,7 @@ enum APIDefinition {
             return parse(dict)
         }
 
-        let headers = headers.merging(["Content-Type": "application/json", "Accept": "application/json"]) { (current, _) in current }
+        let headers = headers.merging(["Content-Type": "application/json", "Accept": "application/json", "User-Agent": "upvest-swift/\(Upvest.SDK_VERSION)"]) { (current, _) in current }
 
         return HTTPResource(path: path, method: method, requestBody: jsonBody, headers: headers, parse: parseWrapper)
     }
@@ -471,7 +471,7 @@ enum APIDefinition {
             return parse(array)
         }
 
-        let headers = headers.merging(["Content-Type": "application/json", "Accept": "application/json"]) { (current, _) in current }
+        let headers = headers.merging(["Content-Type": "application/json", "Accept": "application/json", "User-Agent": "upvest-swift/\(Upvest.SDK_VERSION)"]) { (current, _) in current }
 
         return HTTPResource(path: path, method: method, requestBody: jsonBody, headers: headers, parse: parseWrapper)
     }
